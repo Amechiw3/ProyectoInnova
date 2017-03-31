@@ -1,0 +1,11 @@
+﻿body {
+    background-color: #009688;
+}
+
+.card{
+    margin-bottom: 30px;
+}
+    .card-inverse {
+        background-color: #E91E63;; 
+        border-color: #C2185B;;
+    }
