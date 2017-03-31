@@ -1,7 +1,7 @@
 # ProyectoInnova
 Proyecto ASP.NET y DESKTOP con el framework Entityframework
 
----[  WEB  ]-----------------------------------------------
+---[WEB]--------------------------------------------------
 
 Bootstrap:  http://v4-alpha.getbootstrap.com/getting-started/download/
 
