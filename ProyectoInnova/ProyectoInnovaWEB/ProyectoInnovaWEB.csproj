@@ -133,6 +133,15 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Assets\css\bootstrap-grid.css" />
+    <Content Include="Assets\css\bootstrap-grid.min.css" />
+    <Content Include="Assets\css\bootstrap-reboot.css" />
+    <Content Include="Assets\css\bootstrap-reboot.min.css" />
+    <Content Include="Assets\css\bootstrap.css" />
+    <Content Include="Assets\css\bootstrap.min.css" />
+    <Content Include="Assets\fonts\fontawesome-webfont.svg" />
+    <Content Include="Assets\js\jquery-3.2.0.js" />
+    <Content Include="Assets\js\tether.js" />
     <Content Include="Global.asax" />
     <Content Include="scripts\ai.0.15.0-build58334.js" />
     <Content Include="scripts\ai.0.15.0-build58334.min.js" />
@@ -143,6 +152,20 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201703310702441_INICIAL.cs" />
+    <Compile Include="Migrations\201703310702441_INICIAL.Designer.cs">
+      <DependentUpon>201703310702441_INICIAL.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\Acceso.cs" />
+    <Compile Include="Models\Candidata.cs" />
+    <Compile Include="Models\DataModel.cs" />
+    <Compile Include="Models\Municipio.cs" />
+    <Compile Include="Models\Permiso.cs" />
+    <Compile Include="Models\PermisoNegado.cs" />
+    <Compile Include="Models\ranking.cs" />
+    <Compile Include="Models\Rol.cs" />
+    <Compile Include="Models\Usuario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -151,6 +174,11 @@
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="Assets\fonts\fontawesome-webfont.eot" />
+    <Content Include="Assets\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Assets\fonts\fontawesome-webfont.woff" />
+    <Content Include="Assets\fonts\fontawesome-webfont.woff2" />
+    <Content Include="Assets\fonts\FontAwesome.otf" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -161,7 +189,12 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Controllers\" />
-    <Folder Include="Models\" />
+    <Folder Include="Models\Manager\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201703310702441_INICIAL.resx">
+      <DependentUpon>201703310702441_INICIAL.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
