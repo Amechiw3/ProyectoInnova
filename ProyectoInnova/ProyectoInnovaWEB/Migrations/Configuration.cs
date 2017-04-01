@@ -1,6 +1,7 @@
 namespace ProyectoInnovaWEB.Migrations
 {
     using System;
+    
     using System.Data.Entity;
     using System.Data.Entity.Migrations;
     using System.Linq;
@@ -11,6 +12,9 @@ namespace ProyectoInnovaWEB.Migrations
         {
             AutomaticMigrationsEnabled = false;
             SetSqlGenerator("MySql.Data.MySqlClient", new MySql.Data.Entity.MySqlMigrationSqlGenerator());
+           
+
+            
         }
 
         protected override void Seed(ProyectoInnovaWEB.Models.DataModel context)
