@@ -10,6 +10,18 @@ namespace ProyectoInnovaDESK.Controllers
 {
     class MunicipioManager
     {
+        public static List<Municipio> ListarContenido()
+        {
+            try
+            {
+                var ctx = new DataModel();
+                return ctx.Municipios.Where(r => r.bStatus == true).ToList();
+            }
+            catch (Exception ex)
+            {
+                throw;
+            }
+        }
 
         public static Municipio BuscarPorId(int ID)
         {

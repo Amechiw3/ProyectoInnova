@@ -5,17 +5,53 @@ using System.Text;
 using System.Threading.Tasks;
 
 using ProyectoInnovaDESK.Models;
+using System.Drawing.Imaging;
+using System.Drawing;
+using AForge.Video;
+using AForge.Video.DirectShow;
+using ProyectoInnovaDESK.Tools;
+
 
 namespace ProyectoInnovaDESK.Controllers
 {
     class CandidataManager
     {
+        public int pkCandidata { get; set; }
+        public Bitmap Fotografia { get; set; }
+        public String sNombre { get; set; }
+        public String sApellido { get; set; }
+        public String sAnios { get; set; }
+        public String sDescripcion { get; set; }
+        public String sNivelEstudios { get; set; }
+
         public static List<Candidata> ListarContenido(string dato = "")
         {
             try
             {
                 var ctx = new DataModel();
                 return ctx.Candidatas.Where(r => r.sNombre.Contains(dato) && r.bStatus == true).ToList();
+            }
+            catch (Exception ex)
+            {
+                throw;
+            }
+        }
+
+        public static List<CandidataManager> ListarContenidoBuscar(string dato = "")
+        {
+            try
+            {
+                var ctx = new DataModel();
+                return (from r in ctx.Candidatas.Where(r => r.sNombre.Contains(dato) && r.bStatus == true).ToList()
+                        select new CandidataManager
+                        {
+                            pkCandidata = r.pkCandidata,
+                            sNombre = $"{r.sNombre} {r.sApellido}",
+                            Fotografia = ImagenTool.Base64StringToBitmap(r.fotografia),
+                            sDescripcion = r.sDescripcion,
+                            sNivelEstudios = r.sNivelEstudios,
+                            sAnios = (DateTime.Now.Year - r.dfnac.Year).ToString()
+                        }).ToList();
             }
             catch (Exception ex)
             {

@@ -33,7 +33,7 @@ namespace ProyectoInnovaDESK.Views
             dtpFNac.Value = candidata.dfnac;
             txtCorreo.Text = candidata.sCorreo;
             txtCurp.Text = candidata.sCurp;
-            txtNivelEst.Text = candidata.sNivelEstudios;
+            cboNivelEstudios.Text = candidata.sNivelEstudios;
             txtAnioConvocatoria.Text = candidata.sAnioConvocatoria;
             webCamCandidatas.colocarFotografia(candidata.fotografia);
             cboMunicipo.Text = candidata.municipio.sNombre;
@@ -48,7 +48,7 @@ namespace ProyectoInnovaDESK.Views
             candidata.dfnac = DateTime.Parse(dtpFNac.Value.ToShortDateString());
             candidata.sCorreo = txtCorreo.Text;
             candidata.sCurp = txtCurp.Text;
-            candidata.sNivelEstudios = txtNivelEst.Text;
+            candidata.sNivelEstudios = cboNivelEstudios.Text;
             candidata.sAnioConvocatoria = txtAnioConvocatoria.Text;
             candidata.fotografia = webCamCandidatas.ImagenString;
             candidata.usuarios = UsuarioManager.BuscarPorNoEmpleado(frmPrincipal.uHelper.usuario.pkUsuario);
@@ -61,6 +61,11 @@ namespace ProyectoInnovaDESK.Views
         }
 
         private void frmUpdCandidata_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtNivelEst_TextChanged(object sender, EventArgs e)
         {
 
         }

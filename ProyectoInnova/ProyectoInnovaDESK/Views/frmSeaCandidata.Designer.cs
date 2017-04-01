@@ -36,7 +36,7 @@
             this.bnEditar = new System.Windows.Forms.Button();
             this.btnBorrar = new System.Windows.Forms.Button();
             this.Codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Fotografia = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Fotografia = new System.Windows.Forms.DataGridViewImageColumn();
             this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Edad = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -98,6 +98,7 @@
             this.btnAgregar.TabIndex = 4;
             this.btnAgregar.Text = "Agregar";
             this.btnAgregar.UseVisualStyleBackColor = true;
+            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
             // bnEditar
             // 
@@ -123,13 +124,21 @@
             this.Codigo.HeaderText = "Codigo";
             this.Codigo.Name = "Codigo";
             this.Codigo.ReadOnly = true;
+            this.Codigo.Width = 75;
             // 
             // Fotografia
             // 
             this.Fotografia.DataPropertyName = "Fotografia";
+            this.Fotografia.FillWeight = 300F;
             this.Fotografia.HeaderText = "Fotografia";
+            this.Fotografia.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.Fotografia.MinimumWidth = 100;
             this.Fotografia.Name = "Fotografia";
             this.Fotografia.ReadOnly = true;
+            this.Fotografia.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Fotografia.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.Fotografia.Visible = false;
+            this.Fotografia.Width = 300;
             // 
             // Nombre
             // 
@@ -137,6 +146,7 @@
             this.Nombre.HeaderText = "Nombre";
             this.Nombre.Name = "Nombre";
             this.Nombre.ReadOnly = true;
+            this.Nombre.Width = 250;
             // 
             // Descripcion
             // 
@@ -144,13 +154,15 @@
             this.Descripcion.HeaderText = "Descripcion";
             this.Descripcion.Name = "Descripcion";
             this.Descripcion.ReadOnly = true;
+            this.Descripcion.Width = 350;
             // 
             // Edad
             // 
-            this.Edad.DataPropertyName = "iEdad";
+            this.Edad.DataPropertyName = "sAnios";
             this.Edad.HeaderText = "Edad";
             this.Edad.Name = "Edad";
             this.Edad.ReadOnly = true;
+            this.Edad.Width = 50;
             // 
             // Estudios
             // 
@@ -192,7 +204,7 @@
         private System.Windows.Forms.Button bnEditar;
         private System.Windows.Forms.Button btnBorrar;
         private System.Windows.Forms.DataGridViewTextBoxColumn Codigo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Fotografia;
+        private System.Windows.Forms.DataGridViewImageColumn Fotografia;
         private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
         private System.Windows.Forms.DataGridViewTextBoxColumn Descripcion;
         private System.Windows.Forms.DataGridViewTextBoxColumn Edad;
