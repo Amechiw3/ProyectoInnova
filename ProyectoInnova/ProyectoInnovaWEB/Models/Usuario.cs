@@ -20,7 +20,10 @@ namespace ProyectoInnovaWEB.Models
         public String sAppellidos { get; set; }
         public Boolean bStatus { get; set; }
 
+        /*  Relaciones */
         public virtual Rol rol { get; set; }
+        public ICollection<Candidata> candidatas { get; set; }
+
         public ICollection<Acceso> Accesos { get; set; }
 
         /// <summary>

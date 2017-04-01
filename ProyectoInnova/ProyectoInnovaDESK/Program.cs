@@ -4,6 +4,8 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+using ProyectoInnovaDESK.Views;
+
 namespace ProyectoInnovaDESK
 {
     static class Program
@@ -16,7 +18,7 @@ namespace ProyectoInnovaDESK
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            Application.Run(new frmPrincipal());
         }
     }
 }
