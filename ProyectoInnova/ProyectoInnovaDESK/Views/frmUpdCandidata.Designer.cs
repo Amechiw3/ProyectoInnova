@@ -38,7 +38,6 @@
             this.cboMunicipo = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.txtNivelEst = new System.Windows.Forms.TextBox();
             this.txtAnioConvocatoria = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.webCamCandidatas = new ProyectoInnovaDESK.userControl.webCamCandidatas();
@@ -50,12 +49,14 @@
             this.label2 = new System.Windows.Forms.Label();
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.cboNivelEstudios = new System.Windows.Forms.ComboBox();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(189)))), ((int)(((byte)(189)))));
+            this.groupBox1.Controls.Add(this.cboNivelEstudios);
             this.groupBox1.Controls.Add(this.txtCurp);
             this.groupBox1.Controls.Add(this.label9);
             this.groupBox1.Controls.Add(this.btnCancelar);
@@ -65,7 +66,6 @@
             this.groupBox1.Controls.Add(this.cboMunicipo);
             this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.label6);
-            this.groupBox1.Controls.Add(this.txtNivelEst);
             this.groupBox1.Controls.Add(this.txtAnioConvocatoria);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.webCamCandidatas);
@@ -143,7 +143,7 @@
             // 
             this.cboMunicipo.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboMunicipo.FormattingEnabled = true;
-            this.cboMunicipo.Location = new System.Drawing.Point(532, 222);
+            this.cboMunicipo.Location = new System.Drawing.Point(532, 224);
             this.cboMunicipo.Name = "cboMunicipo";
             this.cboMunicipo.Size = new System.Drawing.Size(142, 26);
             this.cboMunicipo.TabIndex = 16;
@@ -167,14 +167,6 @@
             this.label6.Size = new System.Drawing.Size(120, 18);
             this.label6.TabIndex = 13;
             this.label6.Text = "Nivel de estudios";
-            // 
-            // txtNivelEst
-            // 
-            this.txtNivelEst.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNivelEst.Location = new System.Drawing.Point(377, 224);
-            this.txtNivelEst.Name = "txtNivelEst";
-            this.txtNivelEst.Size = new System.Drawing.Size(149, 24);
-            this.txtNivelEst.TabIndex = 14;
             // 
             // txtAnioConvocatoria
             // 
@@ -206,7 +198,7 @@
             // txtCorreo
             // 
             this.txtCorreo.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCorreo.Location = new System.Drawing.Point(215, 224);
+            this.txtCorreo.Location = new System.Drawing.Point(215, 226);
             this.txtCorreo.Name = "txtCorreo";
             this.txtCorreo.Size = new System.Drawing.Size(156, 24);
             this.txtCorreo.TabIndex = 12;
@@ -276,6 +268,21 @@
             this.label1.TabIndex = 3;
             this.label1.Text = "Nombre";
             // 
+            // cboNivelEstudios
+            // 
+            this.cboNivelEstudios.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboNivelEstudios.FormattingEnabled = true;
+            this.cboNivelEstudios.Items.AddRange(new object[] {
+            "Basica",
+            "Intermedia",
+            "Avanzada",
+            "Maestria",
+            "Doctorado"});
+            this.cboNivelEstudios.Location = new System.Drawing.Point(377, 224);
+            this.cboNivelEstudios.Name = "cboNivelEstudios";
+            this.cboNivelEstudios.Size = new System.Drawing.Size(142, 26);
+            this.cboNivelEstudios.TabIndex = 22;
+            // 
             // frmUpdCandidata
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -304,7 +311,6 @@
         private System.Windows.Forms.ComboBox cboMunicipo;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox txtNivelEst;
         private System.Windows.Forms.TextBox txtAnioConvocatoria;
         private System.Windows.Forms.Label label5;
         private userControl.webCamCandidatas webCamCandidatas;
@@ -316,5 +322,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtNombre;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ComboBox cboNivelEstudios;
     }
 }

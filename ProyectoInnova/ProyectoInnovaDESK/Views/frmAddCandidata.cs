@@ -28,17 +28,31 @@ namespace ProyectoInnovaDESK.Views
             candidata.dfnac = DateTime.Parse(dtpFNac.Value.ToShortDateString());
             candidata.sCorreo = txtCorreo.Text;
             candidata.sCurp = txtCurp.Text;
-            candidata.sNivelEstudios = txtNivelEst.Text;
+            candidata.sNivelEstudios = cboNivelEstudios.Text;
             candidata.sAnioConvocatoria = txtAnioConvocatoria.Text;
             candidata.fotografia = webCamCandidatas.ImagenString;
             candidata.usuarios = UsuarioManager.BuscarPorNoEmpleado(frmPrincipal.uHelper.usuario.pkUsuario);
-            candidata.municipio = MunicipioManager.BuscarPorId(int.Parse(cboMunicipo.Text.ToString()));
+            candidata.municipio = MunicipioManager.BuscarPorId(int.Parse(cboMunicipo.SelectedValue.ToString()));
             candidata.sDescripcion = txtDescripcion.Text;
 
             CandidataManager.RegistrarCandidata(candidata);
             
             this.Close();
 
+        }
+
+        public void llenarcombomunicipios()
+        {
+            cboMunicipo.DisplayMember = "sNombre";
+            cboMunicipo.ValueMember = "pkMunicipio";
+            cboMunicipo.DataSource = MunicipioManager.ListarContenido();
+
+            cboNivelEstudios.SelectedItem = 1;
+        }
+
+        private void frmAddCandidata_Load(object sender, EventArgs e)
+        {
+            llenarcombomunicipios();
         }
     }
 }

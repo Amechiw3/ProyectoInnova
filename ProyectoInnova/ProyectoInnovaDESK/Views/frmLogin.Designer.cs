@@ -113,6 +113,7 @@
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Size = new System.Drawing.Size(260, 26);
             this.txtPassword.TabIndex = 5;
+            this.txtPassword.Text = "123";
             // 
             // txtnoempleado
             // 
@@ -120,6 +121,7 @@
             this.txtnoempleado.Name = "txtnoempleado";
             this.txtnoempleado.Size = new System.Drawing.Size(260, 26);
             this.txtnoempleado.TabIndex = 3;
+            this.txtnoempleado.Text = "1";
             // 
             // label2
             // 
@@ -132,6 +134,7 @@
             // 
             // frmLogin
             // 
+            this.AcceptButton = this.btnAcceder;
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(24)))), ((int)(((byte)(91)))));
