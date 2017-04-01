@@ -43,5 +43,11 @@ namespace ProyectoInnovaDESK.Views
             var frm = new frmSeaCandidata();
             frm.Show();
         }
+
+        private void btnUsuarios_Click(object sender, EventArgs e)
+        {
+            var frm = new frmSeaUsuario();
+            frm.Show();
+        }
     }
 }

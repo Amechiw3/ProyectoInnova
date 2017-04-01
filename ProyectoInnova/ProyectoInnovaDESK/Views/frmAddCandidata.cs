@@ -10,6 +10,7 @@ using System.Windows.Forms;
 
 using ProyectoInnovaDESK.Models;
 using ProyectoInnovaDESK.Controllers;
+using System.Text.RegularExpressions;
 
 namespace ProyectoInnovaDESK.Views
 {
@@ -22,23 +23,50 @@ namespace ProyectoInnovaDESK.Views
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            var candidata = new Candidata();
-            candidata.sNombre = txtNombre.Text;
-            candidata.sApellido = txtApellido.Text;
-            candidata.dfnac = DateTime.Parse(dtpFNac.Value.ToShortDateString());
-            candidata.sCorreo = txtCorreo.Text;
-            candidata.sCurp = txtCurp.Text;
-            candidata.sNivelEstudios = cboNivelEstudios.Text;
-            candidata.sAnioConvocatoria = txtAnioConvocatoria.Text;
-            candidata.fotografia = webCamCandidatas.ImagenString;
-            candidata.usuarios = UsuarioManager.BuscarPorNoEmpleado(frmPrincipal.uHelper.usuario.pkUsuario);
-            candidata.municipio = MunicipioManager.BuscarPorId(int.Parse(cboMunicipo.SelectedValue.ToString()));
-            candidata.sDescripcion = txtDescripcion.Text;
 
-            CandidataManager.RegistrarCandidata(candidata);
-            
-            this.Close();
+            Regex CURP = new Regex(@"^.*(?=.{18})(?=.*[0-9])(?=.*[A-ZÑ]).*$");
+            Regex EMAIL = new Regex(@"\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*");
 
+            if (CURP.IsMatch(txtCurp.Text))
+            {
+                if (EMAIL.IsMatch(txtCurp.Text))
+                {
+                    if (webCamCandidatas.ImagenString != "")
+                    {
+                        var candidata = new Candidata();
+                        candidata.sNombre = txtNombre.Text;
+                        candidata.sApellido = txtApellido.Text;
+                        candidata.dfnac = DateTime.Parse(dtpFNac.Value.ToShortDateString());
+                        candidata.sCorreo = txtCorreo.Text;
+                        candidata.sCurp = txtCurp.Text;
+                        candidata.sNivelEstudios = cboNivelEstudios.Text;
+                        candidata.sAnioConvocatoria = txtAnioConvocatoria.Text;
+                        candidata.fotografia = webCamCandidatas.ImagenString;
+                        candidata.usuarios = UsuarioManager.BuscarPorNoEmpleado(frmPrincipal.uHelper.usuario.pkUsuario);
+                        candidata.municipio = MunicipioManager.BuscarPorId(int.Parse(cboMunicipo.SelectedValue.ToString()));
+                        candidata.sDescripcion = txtDescripcion.Text;
+
+                        CandidataManager.RegistrarCandidata(candidata);
+
+                        this.Close();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Se necesita una fotografia para completar el registro", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        webCamCandidatas.Focus();
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Formato de correo electronico incorrecto", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    txtCorreo.Focus();
+                }
+            }
+            else
+            {
+                MessageBox.Show("Formato de curp incorrecto", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                txtCurp.Focus();
+            }
         }
 
         public void llenarcombomunicipios()
@@ -46,13 +74,47 @@ namespace ProyectoInnovaDESK.Views
             cboMunicipo.DisplayMember = "sNombre";
             cboMunicipo.ValueMember = "pkMunicipio";
             cboMunicipo.DataSource = MunicipioManager.ListarContenido();
-
-            cboNivelEstudios.SelectedItem = 1;
+            
         }
 
         private void frmAddCandidata_Load(object sender, EventArgs e)
         {
             llenarcombomunicipios();
+        }
+
+        private void txtAnioConvocatoria_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!(char.IsNumber(e.KeyChar)) && (e.KeyChar != (char)Keys.Back))
+            {
+                MessageBox.Show("Solo se permiten numeros", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                e.Handled = true;
+                return;
+            }
+        }
+
+        private void txtNombre_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!(char.IsLetter(e.KeyChar)) && (e.KeyChar != (char)Keys.Back))
+            {
+                MessageBox.Show("Solo se permiten letras", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                e.Handled = true;
+                return;
+            }
+        }
+
+        private void txtCurp_TextChanged(object sender, EventArgs e)
+        {
+            /*
+            Regex Val = new Regex(@"\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*");
+            if (Val.IsMatch(txtCurp.Text))
+            {
+
+            }
+            else
+            {
+                MessageBox.Show("Formato de curp incorrecto", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                txtCurp.Focus();
+            }*/
         }
     }
 }

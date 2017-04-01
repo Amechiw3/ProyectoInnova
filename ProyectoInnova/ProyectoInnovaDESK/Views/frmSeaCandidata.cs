@@ -24,6 +24,7 @@ namespace ProyectoInnovaDESK.Views
         private void frmSeaCandidata_Load(object sender, EventArgs e)
         {
             this.dgvDatos.AutoGenerateColumns = false;
+            this.dgvDatos.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             llenardatos();
         }
 
@@ -46,6 +47,19 @@ namespace ProyectoInnovaDESK.Views
         {
             var frmAgregarCandidata = new frmAddCandidata();
             frmAgregarCandidata.ShowDialog();
+        }
+
+        private void bnEditar_Click(object sender, EventArgs e)
+        {
+            var update = new Views.frmUpdCandidata(int.Parse(dgvDatos.CurrentRow.Cells[0].Value.ToString()));
+            update.ShowDialog();
+        }
+
+        private void btnBorrar_Click(object sender, EventArgs e)
+        {
+            Candidata candidata = CandidataManager.getData(int.Parse(dgvDatos.CurrentRow.Cells[0].Value.ToString()));
+            CandidataManager.BorrarCandidata(candidata);
+            llenardatos(txtBuscar.Text);
         }
     }
 }

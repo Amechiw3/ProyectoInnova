@@ -170,6 +170,12 @@
     <Compile Include="Views\frmSeaCandidata.Designer.cs">
       <DependentUpon>frmSeaCandidata.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\frmSeaUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\frmSeaUsuario.Designer.cs">
+      <DependentUpon>frmSeaUsuario.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\frmUpdCandidata.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -209,6 +215,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\frmSeaCandidata.resx">
       <DependentUpon>frmSeaCandidata.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\frmSeaUsuario.resx">
+      <DependentUpon>frmSeaUsuario.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\frmUpdCandidata.resx">
       <DependentUpon>frmUpdCandidata.cs</DependentUpon>

@@ -59,13 +59,13 @@ namespace ProyectoInnovaDESK.Controllers
             }
         }
 
-        public static Candidata getData(Candidata candidata)
+        public static Candidata getData(int candidata)
         {
             try
             {
                 var ctx = new DataModel();
                 return ctx.Candidatas.Include("municipio").Include("usuarios")
-                    .Where(r => r.pkCandidata == candidata.pkCandidata && r.bStatus == true).FirstOrDefault();
+                    .Where(r => r.pkCandidata == candidata && r.bStatus == true).FirstOrDefault();
             }
             catch (Exception ex)
             {

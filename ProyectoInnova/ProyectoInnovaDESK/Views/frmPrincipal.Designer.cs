@@ -30,7 +30,7 @@
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnUsuarios = new System.Windows.Forms.Button();
             this.btnCandidata = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -39,7 +39,7 @@
             // 
             this.groupBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(189)))), ((int)(((byte)(189)))));
             this.groupBox1.Controls.Add(this.button3);
-            this.groupBox1.Controls.Add(this.button2);
+            this.groupBox1.Controls.Add(this.btnUsuarios);
             this.groupBox1.Controls.Add(this.btnCandidata);
             this.groupBox1.Location = new System.Drawing.Point(18, 18);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
@@ -59,15 +59,16 @@
             this.button3.Text = "Reportes";
             this.button3.UseVisualStyleBackColor = false;
             // 
-            // button2
+            // btnUsuarios
             // 
-            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(63)))), ((int)(((byte)(159)))));
-            this.button2.Location = new System.Drawing.Point(263, 187);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(182, 71);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "Usuarios";
-            this.button2.UseVisualStyleBackColor = false;
+            this.btnUsuarios.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(63)))), ((int)(((byte)(159)))));
+            this.btnUsuarios.Location = new System.Drawing.Point(263, 187);
+            this.btnUsuarios.Name = "btnUsuarios";
+            this.btnUsuarios.Size = new System.Drawing.Size(182, 71);
+            this.btnUsuarios.TabIndex = 1;
+            this.btnUsuarios.Text = "Usuarios";
+            this.btnUsuarios.UseVisualStyleBackColor = false;
+            this.btnUsuarios.Click += new System.EventHandler(this.btnUsuarios_Click);
             // 
             // btnCandidata
             // 
@@ -104,7 +105,7 @@
 
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnUsuarios;
         private System.Windows.Forms.Button btnCandidata;
     }
 }

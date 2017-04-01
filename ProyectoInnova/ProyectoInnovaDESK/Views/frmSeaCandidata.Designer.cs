@@ -108,6 +108,7 @@
             this.bnEditar.TabIndex = 5;
             this.bnEditar.Text = "Editar";
             this.bnEditar.UseVisualStyleBackColor = true;
+            this.bnEditar.Click += new System.EventHandler(this.bnEditar_Click);
             // 
             // btnBorrar
             // 
@@ -117,10 +118,11 @@
             this.btnBorrar.TabIndex = 6;
             this.btnBorrar.Text = "Borrar";
             this.btnBorrar.UseVisualStyleBackColor = true;
+            this.btnBorrar.Click += new System.EventHandler(this.btnBorrar_Click);
             // 
             // Codigo
             // 
-            this.Codigo.DataPropertyName = "pkCandidata";
+            this.Codigo.DataPropertyName = "pkUsuario";
             this.Codigo.HeaderText = "Codigo";
             this.Codigo.Name = "Codigo";
             this.Codigo.ReadOnly = true;

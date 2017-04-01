@@ -16,8 +16,8 @@ namespace ProyectoInnovaDESK.Views
 {
     public partial class frmUpdCandidata : Form
     {
-        Candidata candidataData;
-        public frmUpdCandidata(Candidata xcandidata)
+        int candidataData;
+        public frmUpdCandidata(int xcandidata)
         {
             InitializeComponent();
             this.candidataData = xcandidata;

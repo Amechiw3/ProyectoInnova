@@ -68,5 +68,18 @@ namespace ProyectoInnovaDESK.Controllers
                 throw;
             }
         }
+
+        public static List<Usuario> ListarContenido(string dato = "")
+        {
+            try
+            {
+                var ctx = new DataModel();
+                return ctx.Usuarios.Where(r => r.sNombre.Contains(dato) && r.bStatus == true).ToList();
+            }
+            catch (Exception ex)
+            {
+                throw;
+            }
+        }
     }
 }

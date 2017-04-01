@@ -88,8 +88,9 @@
             this.txtCurp.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCurp.Location = new System.Drawing.Point(215, 163);
             this.txtCurp.Name = "txtCurp";
-            this.txtCurp.Size = new System.Drawing.Size(459, 24);
+            this.txtCurp.Size = new System.Drawing.Size(234, 24);
             this.txtCurp.TabIndex = 10;
+            this.txtCurp.TextChanged += new System.EventHandler(this.txtCurp_TextChanged);
             // 
             // label9
             // 
@@ -124,6 +125,7 @@
             // 
             this.txtDescripcion.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtDescripcion.Location = new System.Drawing.Point(215, 291);
+            this.txtDescripcion.MaxLength = 75;
             this.txtDescripcion.Multiline = true;
             this.txtDescripcion.Name = "txtDescripcion";
             this.txtDescripcion.Size = new System.Drawing.Size(459, 64);
@@ -144,16 +146,16 @@
             this.cboMunicipo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboMunicipo.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboMunicipo.FormattingEnabled = true;
-            this.cboMunicipo.Location = new System.Drawing.Point(532, 224);
+            this.cboMunicipo.Location = new System.Drawing.Point(498, 224);
             this.cboMunicipo.Name = "cboMunicipo";
-            this.cboMunicipo.Size = new System.Drawing.Size(142, 26);
+            this.cboMunicipo.Size = new System.Drawing.Size(176, 26);
             this.cboMunicipo.TabIndex = 16;
             // 
             // label7
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(529, 201);
+            this.label7.Location = new System.Drawing.Point(495, 203);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(71, 18);
             this.label7.TabIndex = 15;
@@ -163,7 +165,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(374, 203);
+            this.label6.Location = new System.Drawing.Point(212, 203);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(120, 18);
             this.label6.TabIndex = 13;
@@ -176,6 +178,7 @@
             this.txtAnioConvocatoria.Name = "txtAnioConvocatoria";
             this.txtAnioConvocatoria.Size = new System.Drawing.Size(459, 24);
             this.txtAnioConvocatoria.TabIndex = 2;
+            this.txtAnioConvocatoria.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtAnioConvocatoria_KeyPress);
             // 
             // label5
             // 
@@ -190,16 +193,16 @@
             // txtCorreo
             // 
             this.txtCorreo.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCorreo.Location = new System.Drawing.Point(215, 226);
+            this.txtCorreo.Location = new System.Drawing.Point(455, 163);
             this.txtCorreo.Name = "txtCorreo";
-            this.txtCorreo.Size = new System.Drawing.Size(156, 24);
+            this.txtCorreo.Size = new System.Drawing.Size(219, 24);
             this.txtCorreo.TabIndex = 12;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(212, 203);
+            this.label4.Location = new System.Drawing.Point(452, 140);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(134, 18);
             this.label4.TabIndex = 11;
@@ -231,6 +234,7 @@
             this.txtApellido.Name = "txtApellido";
             this.txtApellido.Size = new System.Drawing.Size(149, 24);
             this.txtApellido.TabIndex = 6;
+            this.txtApellido.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNombre_KeyPress);
             // 
             // label2
             // 
@@ -249,6 +253,7 @@
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(156, 24);
             this.txtNombre.TabIndex = 4;
+            this.txtNombre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNombre_KeyPress);
             // 
             // label1
             // 
@@ -271,9 +276,9 @@
             "Avanzada",
             "Maestria",
             "Doctorado"});
-            this.cboNivelEstudios.Location = new System.Drawing.Point(377, 224);
+            this.cboNivelEstudios.Location = new System.Drawing.Point(215, 224);
             this.cboNivelEstudios.Name = "cboNivelEstudios";
-            this.cboNivelEstudios.Size = new System.Drawing.Size(142, 26);
+            this.cboNivelEstudios.Size = new System.Drawing.Size(176, 26);
             this.cboNivelEstudios.TabIndex = 21;
             // 
             // webCamCandidatas

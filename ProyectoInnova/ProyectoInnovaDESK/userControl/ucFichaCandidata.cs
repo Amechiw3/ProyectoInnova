@@ -40,7 +40,7 @@ namespace ProyectoInnovaDESK.userControl
 
         private void btnEditar_Click(object sender, EventArgs e)
         {
-            var update = new Views.frmUpdCandidata(candidata);
+            var update = new Views.frmUpdCandidata(candidata.pkCandidata);
             update.ShowDialog();
         }
 

@@ -114,6 +114,7 @@
             this.txtPassword.Size = new System.Drawing.Size(260, 26);
             this.txtPassword.TabIndex = 5;
             this.txtPassword.Text = "123";
+            this.txtPassword.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtnoempleado_KeyPress);
             // 
             // txtnoempleado
             // 
@@ -122,6 +123,7 @@
             this.txtnoempleado.Size = new System.Drawing.Size(260, 26);
             this.txtnoempleado.TabIndex = 3;
             this.txtnoempleado.Text = "1";
+            this.txtnoempleado.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtnoempleado_KeyPress);
             // 
             // label2
             // 
