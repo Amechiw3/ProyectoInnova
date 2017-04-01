@@ -24,6 +24,9 @@ namespace ProyectoInnovaDESK.Models
         [Required(ErrorMessage = "Se requiere la fecha de nacimiento de la candidata")]
         public DateTime dfnac { get; set; }
 
+        [Required(ErrorMessage = "Se requiere el correo de la candidata")]
+        public String sCorreo { get; set; }
+
         [Required(ErrorMessage = "Se requiere el curp de la candidata")]
         public String sCurp { get; set; }
 
@@ -33,12 +36,17 @@ namespace ProyectoInnovaDESK.Models
         [Required(ErrorMessage = "Se requiere una fotografia de la candidata")]
         public String fotografia { get; set; }
 
+        [Required(ErrorMessage = "Se requiere el año de convocatoria de la candidata")]
+        public String sAnioConvocatoria { get; set; }
+
         public String sDescripcion { get; set; }
 
         public Boolean bStatus { get; set; }
 
         //  Relaciones  \\
         public ICollection<ranking> rankings { get; set; }
+
+        public Usuario usuarios { get; set; }
 
         public Municipio municipio { get; set; }
 

@@ -13,7 +13,7 @@ namespace ProyectoInnovaDESK.Migrations
         
         string IMigrationMetadata.Id
         {
-            get { return "201703310657503_INICIAL"; }
+            get { return "201704010704373_INICIAL"; }
         }
         
         string IMigrationMetadata.Source
