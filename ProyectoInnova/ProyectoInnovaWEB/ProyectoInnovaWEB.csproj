@@ -164,6 +164,8 @@
     <Compile Include="Models\Acceso.cs" />
     <Compile Include="Models\Candidata.cs" />
     <Compile Include="Models\DataModel.cs" />
+    <Compile Include="Models\Manager\CandidataManager.cs" />
+    <Compile Include="Models\Manager\RankingManager.cs" />
     <Compile Include="Models\Municipio.cs" />
     <Compile Include="Models\Permiso.cs" />
     <Compile Include="Models\PermisoNegado.cs" />
@@ -186,6 +188,7 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Home\Votar.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -195,7 +198,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Models\Manager\" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201703310702441_INICIAL.resx">

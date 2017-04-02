@@ -50,6 +50,7 @@
             this.btnBorrar.TabIndex = 13;
             this.btnBorrar.Text = "Borrar";
             this.btnBorrar.UseVisualStyleBackColor = true;
+            this.btnBorrar.Click += new System.EventHandler(this.btnBorrar_Click);
             // 
             // bnEditar
             // 
@@ -59,6 +60,7 @@
             this.bnEditar.TabIndex = 12;
             this.bnEditar.Text = "Editar";
             this.bnEditar.UseVisualStyleBackColor = true;
+            this.bnEditar.Click += new System.EventHandler(this.bnEditar_Click);
             // 
             // btnAgregar
             // 
@@ -68,6 +70,7 @@
             this.btnAgregar.TabIndex = 11;
             this.btnAgregar.Text = "Agregar";
             this.btnAgregar.UseVisualStyleBackColor = true;
+            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
             // txtBuscar
             // 
@@ -113,7 +116,7 @@
             // 
             // Codigo
             // 
-            this.Codigo.DataPropertyName = "pkCandidata";
+            this.Codigo.DataPropertyName = "pkUsuario";
             this.Codigo.HeaderText = "Codigo";
             this.Codigo.Name = "Codigo";
             this.Codigo.ReadOnly = true;
@@ -137,7 +140,7 @@
             // 
             // Rol
             // 
-            this.Rol.DataPropertyName = "rol";
+            this.Rol.DataPropertyName = "sRol";
             this.Rol.HeaderText = "Rol";
             this.Rol.Name = "Rol";
             this.Rol.ReadOnly = true;
@@ -147,6 +150,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(189)))), ((int)(((byte)(189)))));
             this.ClientSize = new System.Drawing.Size(704, 441);
             this.Controls.Add(this.btnBorrar);
             this.Controls.Add(this.bnEditar);
