@@ -81,7 +81,8 @@ namespace ProyectoInnovaDESK.Views
 
         private void btnRestricciones_Click(object sender, EventArgs e)
         {
-
+            var frm = new Form1();
+            frm.ShowDialog();
         }
     }
 }

@@ -82,10 +82,10 @@
     <Compile Include="Controllers\MunicipioManager.cs" />
     <Compile Include="Controllers\RolManager.cs" />
     <Compile Include="Controllers\UsuarioManager.cs" />
-    <Compile Include="Form1.cs">
+    <Compile Include="Reportes\Form1.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
+    <Compile Include="Reportes\Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
     <Compile Include="Reportes\Candidatas.cs">
@@ -96,11 +96,18 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Candidatas.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Reportes\frmRptCandidataConvocatoria.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\frmRptCandidataConvocatoria.Designer.cs">
+      <DependentUpon>frmRptCandidataConvocatoria.cs</DependentUpon>
+    </Compile>
     <Compile Include="Reportes\rptCandidataMunicipio.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>rptCandidataMunicipio.rpt</DependentUpon>
       <SubType>Component</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Compile>
     <Compile Include="userControl\ucFichaMunicipio.cs">
       <SubType>UserControl</SubType>
@@ -222,7 +229,7 @@
     <Compile Include="Views\frmUpdUsuario.Designer.cs">
       <DependentUpon>frmUpdUsuario.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Form1.resx">
+    <EmbeddedResource Include="Reportes\Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201704010704373_INICIAL.resx">
@@ -238,9 +245,13 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Reportes\frmRptCandidataConvocatoria.resx">
+      <DependentUpon>frmRptCandidataConvocatoria.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Reportes\rptCandidataMunicipio.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>rptCandidataMunicipio.cs</LastGenOutput>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
     <EmbeddedResource Include="userControl\ucFichaCandidata.resx">
       <DependentUpon>ucFichaCandidata.cs</DependentUpon>

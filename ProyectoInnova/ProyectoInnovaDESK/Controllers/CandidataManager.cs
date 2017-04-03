@@ -137,5 +137,46 @@ namespace ProyectoInnovaDESK.Controllers
                 throw;
             }
         }
+        /// <summary>
+        /// Esta funcion regresa una lista de candidatas por municipo
+        /// </summary>
+        /// <param name="pkMunicipo">Llave primaria de municipio</param>
+        /// <returns></returns>
+        public static  List<Candidata> reporteCandidataMunicipio(int pkMunicipo)
+        {
+            try
+            {
+                var ctx = new DataModel();
+                return ctx.Candidatas.Where(r => r.municipio.pkMunicipio == pkMunicipo).ToList();
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+
+        public static List<string> getAniosConvocatoria()
+        {
+            List<string> departamentos = new List<string>();
+            try
+            {
+                var ctx = new DataModel();
+                var listacandidatas = ctx.Candidatas.GroupBy(r => r.sAnioConvocatoria).ToList();
+                foreach (var item in listacandidatas)
+                {
+                    departamentos.Add(item.Key.ToUpper());
+                }
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+
+            return departamentos;
+
+        }
+
+
     }
 }
