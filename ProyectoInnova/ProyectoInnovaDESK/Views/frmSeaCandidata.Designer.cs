@@ -122,7 +122,7 @@
             // 
             // Codigo
             // 
-            this.Codigo.DataPropertyName = "pkUsuario";
+            this.Codigo.DataPropertyName = "pkCandidata";
             this.Codigo.HeaderText = "Codigo";
             this.Codigo.Name = "Codigo";
             this.Codigo.ReadOnly = true;

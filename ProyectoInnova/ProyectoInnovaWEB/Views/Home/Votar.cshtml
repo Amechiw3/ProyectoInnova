@@ -1,0 +1,35 @@
+﻿@{ 
+    ProyectoInnovaWEB.Models.Candidata candidata = ViewBag.Datos;
+}
+
+<div class="modal-header">
+    <!-- HEADER -->
+    <h5 class="modal-title">Votar por @candidata.sNombre @candidata.sApellido, @(DateTime.Now.Year - candidata.dfnac.Year) Años</h5>
+    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+
+<div class="modal-body">
+    <!--   BODY -->
+    <div class="container">
+        <div class="text-center">
+            <img class="card-img-top img-cand img-fluid img-thumbnail" src="data:image/png;base64,@candidata.fotografia" alt="Card image cap">
+        </div>
+        <p class="card-text text-justify">
+            @candidata.sDescripcion
+        </p>
+        
+    </div>
+</div>
+
+<div class="modal-footer">
+    <!-- FOOTER -->
+    @using (Html.BeginForm("Votacion", "Home", FormMethod.Post))
+    {
+        <input type="hidden" name="pkCandidata" value="@candidata.pkCandidata" />
+
+        <input type="submit" class="btn btn-primary" value="Votar" />
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+    }
+</div>

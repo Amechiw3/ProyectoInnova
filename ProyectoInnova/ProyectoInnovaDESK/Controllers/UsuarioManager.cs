@@ -22,9 +22,9 @@ namespace ProyectoInnovaDESK.Controllers
                 {
                     uHelper.usuario = user;
                     uHelper.esValido = true;
-                    //Acceso nAcceso = new Acceso();
-                    //nAcceso.usuario = user;
-                    //AccesoManager.RegistrarAcceso(nAcceso);
+                    Acceso nAcceso = new Acceso();
+                    nAcceso.usuario = user;
+                    //AccesoManager.RegistrarAcceso(nAcceso, user);
                 }
                 else
                 {
@@ -52,13 +52,21 @@ namespace ProyectoInnovaDESK.Controllers
             }
         }
 
-        public static void RegistrarNuevoUsuario(Usuario nUsuario)
+        public static void RegistrarNuevoUsuario(Usuario nUsuario, Rol rol)
         {
             try
             {
                 using (var ctx = new DataModel())
                 {
-                    ctx.Usuarios.Add(nUsuario);
+                    if(nUsuario.pkUsuario > 0)
+                    {
+                        ctx.Entry(nUsuario).State = System.Data.Entity.EntityState.Modified;
+                    }
+                    else
+                    {
+                        ctx.Entry(nUsuario).State = System.Data.Entity.EntityState.Added;
+                        ctx.Roles.Attach(rol);
+                    }
                     ctx.SaveChanges();
                 }
             }
@@ -78,6 +86,57 @@ namespace ProyectoInnovaDESK.Controllers
             }
             catch (Exception ex)
             {
+                throw;
+            }
+        }
+
+        public int    pkUsuario  { get; set; }
+        public string sNombre   { get; set; }
+        public string sUsuario  { get; set; }
+        public string sRol      { get; set; }
+
+        public static List<UsuarioManager> ListarContenidoBuscar(string dato = "")
+        {
+            try
+            {
+                var ctx = new DataModel();
+                var lista = ctx.Usuarios.Include("rol")
+                        .Include("rol.PermisosNegados")
+                        .Include("rol.PermisosNegados.permiso")
+                        .Where(r => r.sNombre.Contains(dato) && r.bStatus == true).ToList();
+
+                return (from r in lista
+                        select new UsuarioManager
+                        {
+                            pkUsuario = r.pkUsuario,
+                            sNombre = $"{r.sNombre} {r.sAppellidos}",
+                            sUsuario = r.sUsuario,
+                            sRol = r.rol.sNombre
+                        }).ToList();
+
+                
+            }
+            catch (Exception ex)
+            {
+                throw;
+            }
+        }
+
+        public static void BorrarUsuario(Usuario nUsuario)
+        {
+            try
+            {
+                using (var ctx = new DataModel())
+                {
+                    nUsuario.bStatus = false;
+                    ctx.Entry(nUsuario).State = System.Data.Entity.EntityState.Modified;
+
+                    ctx.SaveChanges();
+                }
+            }
+            catch (Exception)
+            {
+
                 throw;
             }
         }

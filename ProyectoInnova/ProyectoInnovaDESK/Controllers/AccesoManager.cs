@@ -14,13 +14,15 @@ namespace ProyectoInnovaDESK.Controllers
         /// Funcion encargada de registrar el acceso de un usuario al sistema
         /// </summary>
         /// <param name="acceso">Recibe los datos de acceso</param>
-        public static void RegistrarAcceso(Acceso acceso)
+        public static void RegistrarAcceso(Acceso acceso, Usuario usuario)
         {
             try
             {
                 var ctx = new DataModel();
-                ctx.Accesos.Add(acceso);
-                ctx.Usuarios.Attach(acceso.usuario);
+                ctx.Entry(acceso).State = System.Data.Entity.EntityState.Added;
+
+                ctx.Usuarios.Attach(usuario);
+
                 ctx.SaveChanges();
             }
             catch (Exception ex)

@@ -24,6 +24,8 @@ namespace ProyectoInnovaDESK.Controllers
         public String sDescripcion { get; set; }
         public String sNivelEstudios { get; set; }
 
+        public int Votos { get; set; }
+
         public static List<Candidata> ListarContenido(string dato = "")
         {
             try
@@ -115,5 +117,26 @@ namespace ProyectoInnovaDESK.Controllers
             }
         }
 
+        public static List<CandidataManager> ListarContenidoBuscar2(string dato = "")
+        {
+            try
+            {
+                var ctx = new DataModel();
+                return (from r in ctx.Candidatas.Where(r => r.sNombre.Contains(dato) && r.bStatus == true).ToList()
+                        select new CandidataManager
+                        {
+                            pkCandidata = r.pkCandidata,
+                            sNombre = $"{r.sNombre} {r.sApellido}",
+                            Fotografia = ImagenTool.Base64StringToBitmap(r.fotografia),
+                            sDescripcion = r.sDescripcion,
+                            sNivelEstudios = r.sNivelEstudios,
+                            sAnios = (DateTime.Now.Year - r.dfnac.Year).ToString(),
+                        }).ToList();
+            }
+            catch (Exception ex)
+            {
+                throw;
+            }
+        }
     }
 }

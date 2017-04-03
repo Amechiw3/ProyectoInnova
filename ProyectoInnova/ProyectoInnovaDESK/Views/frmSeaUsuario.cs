@@ -30,7 +30,29 @@ namespace ProyectoInnovaDESK.Views
 
         public void llenardatos(string dato = "")
         {
-            dgvDatos.DataSource = UsuarioManager.ListarContenido(dato);
+            dgvDatos.DataSource = UsuarioManager.ListarContenidoBuscar(dato);
+        }
+
+        private void btnAgregar_Click(object sender, EventArgs e)
+        {
+            var agregarUsuarios = new frmAddUsuario();
+            agregarUsuarios.ShowDialog();
+            llenardatos();
+        }
+
+        private void bnEditar_Click(object sender, EventArgs e)
+        {
+            var update = new Views.frmUpdUsuario(int.Parse(dgvDatos.CurrentRow.Cells[0].Value.ToString()));
+            update.ShowDialog();
+            llenardatos();
+
+        }
+
+        private void btnBorrar_Click(object sender, EventArgs e)
+        {
+            Usuario usuario = UsuarioManager.BuscarPorNoEmpleado(int.Parse(dgvDatos.CurrentRow.Cells[0].Value.ToString()));
+            UsuarioManager.BorrarUsuario(usuario);
+            llenardatos();
         }
     }
 }
