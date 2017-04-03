@@ -27,6 +27,31 @@ namespace ProyectoInnovaDESK.Controllers.Helpers
             }
             return tiene;
         }
+
+        public Boolean TienePermisos(int ValidarPermiso)
+        {
+            Boolean tiene = false;
+            if (esValido)
+            {
+                try
+                {
+                    var ctx = new DataModel();
+                    //permisonegado pNegado = usuario.niveles.permisosnegados.Where(r => r.permisos.idpermiso == ValidarPermiso).FirstOrDefault();
+                    PermisoNegado pNegados = ctx.PermisosNegados.Where(r => r.permiso.pkPermiso == ValidarPermiso && r.rol.pkRol == this.usuario.rol.pkRol).FirstOrDefault();
+                    if (pNegados == null)
+                    {
+                        tiene = true;
+                    }
+                    return tiene;
+                }
+                catch (Exception)
+                {
+
+                    throw;
+                }
+            }
+            else { return tiene; }
+        }
         public UsuarioHelper()
         {
             this.usuario = null;

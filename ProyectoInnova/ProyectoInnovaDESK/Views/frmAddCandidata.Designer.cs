@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.cboNivelEstudios = new System.Windows.Forms.ComboBox();
             this.txtCurp = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.btnCancelar = new System.Windows.Forms.Button();
@@ -40,6 +41,7 @@
             this.label6 = new System.Windows.Forms.Label();
             this.txtAnioConvocatoria = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
+            this.webCamCandidatas = new ProyectoInnovaDESK.userControl.webCamCandidatas();
             this.txtCorreo = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.dtpFNac = new System.Windows.Forms.DateTimePicker();
@@ -48,8 +50,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.cboNivelEstudios = new System.Windows.Forms.ComboBox();
-            this.webCamCandidatas = new ProyectoInnovaDESK.userControl.webCamCandidatas();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -83,6 +83,22 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             // 
+            // cboNivelEstudios
+            // 
+            this.cboNivelEstudios.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboNivelEstudios.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboNivelEstudios.FormattingEnabled = true;
+            this.cboNivelEstudios.Items.AddRange(new object[] {
+            "Basica",
+            "Intermedia",
+            "Avanzada",
+            "Maestria",
+            "Doctorado"});
+            this.cboNivelEstudios.Location = new System.Drawing.Point(215, 224);
+            this.cboNivelEstudios.Name = "cboNivelEstudios";
+            this.cboNivelEstudios.Size = new System.Drawing.Size(176, 26);
+            this.cboNivelEstudios.TabIndex = 14;
+            // 
             // txtCurp
             // 
             this.txtCurp.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -90,7 +106,6 @@
             this.txtCurp.Name = "txtCurp";
             this.txtCurp.Size = new System.Drawing.Size(234, 24);
             this.txtCurp.TabIndex = 10;
-            this.txtCurp.TextChanged += new System.EventHandler(this.txtCurp_TextChanged);
             // 
             // label9
             // 
@@ -175,6 +190,7 @@
             // 
             this.txtAnioConvocatoria.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtAnioConvocatoria.Location = new System.Drawing.Point(215, 40);
+            this.txtAnioConvocatoria.MaxLength = 4;
             this.txtAnioConvocatoria.Name = "txtAnioConvocatoria";
             this.txtAnioConvocatoria.Size = new System.Drawing.Size(459, 24);
             this.txtAnioConvocatoria.TabIndex = 2;
@@ -189,6 +205,15 @@
             this.label5.Size = new System.Drawing.Size(159, 18);
             this.label5.TabIndex = 1;
             this.label5.Text = "Año de la convocatoria";
+            // 
+            // webCamCandidatas
+            // 
+            this.webCamCandidatas.ImagenBitmap = null;
+            this.webCamCandidatas.ImagenString = null;
+            this.webCamCandidatas.Location = new System.Drawing.Point(6, 19);
+            this.webCamCandidatas.Name = "webCamCandidatas";
+            this.webCamCandidatas.Size = new System.Drawing.Size(200, 229);
+            this.webCamCandidatas.TabIndex = 0;
             // 
             // txtCorreo
             // 
@@ -264,31 +289,6 @@
             this.label1.Size = new System.Drawing.Size(62, 18);
             this.label1.TabIndex = 3;
             this.label1.Text = "Nombre";
-            // 
-            // cboNivelEstudios
-            // 
-            this.cboNivelEstudios.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboNivelEstudios.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboNivelEstudios.FormattingEnabled = true;
-            this.cboNivelEstudios.Items.AddRange(new object[] {
-            "Basica",
-            "Intermedia",
-            "Avanzada",
-            "Maestria",
-            "Doctorado"});
-            this.cboNivelEstudios.Location = new System.Drawing.Point(215, 224);
-            this.cboNivelEstudios.Name = "cboNivelEstudios";
-            this.cboNivelEstudios.Size = new System.Drawing.Size(176, 26);
-            this.cboNivelEstudios.TabIndex = 21;
-            // 
-            // webCamCandidatas
-            // 
-            this.webCamCandidatas.ImagenBitmap = null;
-            this.webCamCandidatas.ImagenString = null;
-            this.webCamCandidatas.Location = new System.Drawing.Point(6, 19);
-            this.webCamCandidatas.Name = "webCamCandidatas";
-            this.webCamCandidatas.Size = new System.Drawing.Size(200, 229);
-            this.webCamCandidatas.TabIndex = 0;
             // 
             // frmAddCandidata
             // 

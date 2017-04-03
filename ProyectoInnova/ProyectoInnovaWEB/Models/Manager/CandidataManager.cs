@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using ProyectoInnovaWEB.Models;
 using System.Drawing;
 using System.IO;
+using System.Drawing.Imaging;
 
 namespace ProyectoInnovaWEB.Models.Manager
 {
@@ -18,9 +19,12 @@ namespace ProyectoInnovaWEB.Models.Manager
         public String sAnios { get; set; }
         public String sDescripcion { get; set; }
         public String sNivelEstudios { get; set; }
-
         public int votos { get; set; }
 
+        /// <summary>
+        /// Esta funcion regresa la lista de candidatas
+        /// </summary>
+        /// <returns></returns>
         public static List<Candidata> GetAll()
         {
             try

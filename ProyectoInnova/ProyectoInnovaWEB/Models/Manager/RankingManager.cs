@@ -8,6 +8,11 @@ namespace ProyectoInnovaWEB.Models.Manager
 {
     public class RankingManager
     {
+        /// <summary>
+        /// Esta funcion esta encargada de registrar el voto
+        /// por una candidata
+        /// </summary>
+        /// <param name="pkCandidata">pkCandidata</param>
         public static void votar(int pkCandidata)
         {
             try
@@ -26,7 +31,13 @@ namespace ProyectoInnovaWEB.Models.Manager
                 throw;
             }
         }
-        
+        /// <summary>
+        /// Esta funcion esta encargada de contar los votos que se han realizado
+        /// por una candidadta
+        /// </summary>
+        /// <param name="ID">pkCandididata</param>
+        /// <param name="voto">Votos realizados</param>
+        /// <returns>Regresa un numero de votos</returns>
         public static int contarVotos(int ID, int voto = 0)
         {
             try

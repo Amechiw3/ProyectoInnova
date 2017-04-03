@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="Candidatas" targetNamespace="http://tempuri.org/Candidatas.xsd" xmlns:mstns="http://tempuri.org/Candidatas.xsd" xmlns="http://tempuri.org/Candidatas.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="Candidatas" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="Candidatas" msprop:Generator_UserDSName="Candidatas">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="Candidatas" msprop:Generator_TableClassName="CandidatasDataTable" msprop:Generator_TableVarName="tableCandidatas" msprop:Generator_TablePropName="_Candidatas" msprop:Generator_RowDeletingName="CandidatasRowDeleting" msprop:Generator_RowChangingName="CandidatasRowChanging" msprop:Generator_RowEvHandlerName="CandidatasRowChangeEventHandler" msprop:Generator_RowDeletedName="CandidatasRowDeleted" msprop:Generator_UserTableName="Candidatas" msprop:Generator_RowChangedName="CandidatasRowChanged" msprop:Generator_RowEvArgName="CandidatasRowChangeEvent" msprop:Generator_RowClassName="CandidatasRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="pkCandidata" msprop:Generator_ColumnVarNameInTable="columnpkCandidata" msprop:Generator_ColumnPropNameInRow="pkCandidata" msprop:Generator_ColumnPropNameInTable="pkCandidataColumn" msprop:Generator_UserColumnName="pkCandidata" type="xs:string" minOccurs="0" />
+              <xs:element name="sNombre" msprop:Generator_ColumnVarNameInTable="columnsNombre" msprop:Generator_ColumnPropNameInRow="sNombre" msprop:Generator_ColumnPropNameInTable="sNombreColumn" msprop:Generator_UserColumnName="sNombre" type="xs:string" minOccurs="0" />
+              <xs:element name="sApellido" msprop:Generator_ColumnVarNameInTable="columnsApellido" msprop:Generator_ColumnPropNameInRow="sApellido" msprop:Generator_ColumnPropNameInTable="sApellidoColumn" msprop:Generator_UserColumnName="sApellido" type="xs:string" minOccurs="0" />
+              <xs:element name="sCurp" msprop:Generator_ColumnVarNameInTable="columnsCurp" msprop:Generator_ColumnPropNameInRow="sCurp" msprop:Generator_ColumnPropNameInTable="sCurpColumn" msprop:Generator_UserColumnName="sCurp" type="xs:string" minOccurs="0" />
+              <xs:element name="sCorreo" msprop:Generator_ColumnVarNameInTable="columnsCorreo" msprop:Generator_ColumnPropNameInRow="sCorreo" msprop:Generator_ColumnPropNameInTable="sCorreoColumn" msprop:Generator_UserColumnName="sCorreo" type="xs:string" minOccurs="0" />
+              <xs:element name="municipio" msprop:Generator_ColumnVarNameInTable="columnmunicipio" msprop:Generator_ColumnPropNameInRow="municipio" msprop:Generator_ColumnPropNameInTable="municipioColumn" msprop:Generator_UserColumnName="municipio" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

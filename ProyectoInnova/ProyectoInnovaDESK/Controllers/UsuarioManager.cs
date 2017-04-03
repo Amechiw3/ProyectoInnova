@@ -90,7 +90,7 @@ namespace ProyectoInnovaDESK.Controllers
             }
         }
 
-        public int    pkUsuario  { get; set; }
+        public int    pkUsuario { get; set; }
         public string sNombre   { get; set; }
         public string sUsuario  { get; set; }
         public string sRol      { get; set; }

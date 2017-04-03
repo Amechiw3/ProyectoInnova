@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+using System.Windows.Forms;
 using ProyectoInnovaDESK.Models;
 
 namespace ProyectoInnovaDESK.Controllers
@@ -27,7 +28,7 @@ namespace ProyectoInnovaDESK.Controllers
             }
             catch (Exception ex)
             {
-                throw;
+                MessageBox.Show("Error\r\n"+ex.Message, "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
         }
     }

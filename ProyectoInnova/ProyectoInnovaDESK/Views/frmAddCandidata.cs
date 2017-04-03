@@ -23,13 +23,12 @@ namespace ProyectoInnovaDESK.Views
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-
             Regex CURP = new Regex(@"^.*(?=.{18})(?=.*[0-9])(?=.*[A-ZÑ]).*$");
             Regex EMAIL = new Regex(@"\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*");
 
             if (CURP.IsMatch(txtCurp.Text))
             {
-                if (EMAIL.IsMatch(txtCurp.Text))
+                if (EMAIL.IsMatch(txtCorreo.Text))
                 {
                     if (webCamCandidatas.ImagenString != "")
                     {
@@ -46,9 +45,16 @@ namespace ProyectoInnovaDESK.Views
                         candidata.municipio = MunicipioManager.BuscarPorId(int.Parse(cboMunicipo.SelectedValue.ToString()));
                         candidata.sDescripcion = txtDescripcion.Text;
 
-                        CandidataManager.RegistrarCandidata(candidata);
-
-                        this.Close();
+                        var validar = CandidataManager.validarCandidata(candidata);
+                        if (validar != null)
+                        {
+                            MessageBox.Show("Candidata ya registrada", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        }
+                        else
+                        {
+                            CandidataManager.RegistrarCandidata(candidata);
+                            this.Close();
+                        }
                     }
                     else
                     {
@@ -74,7 +80,6 @@ namespace ProyectoInnovaDESK.Views
             cboMunicipo.DisplayMember = "sNombre";
             cboMunicipo.ValueMember = "pkMunicipio";
             cboMunicipo.DataSource = MunicipioManager.ListarContenido();
-            
         }
 
         private void frmAddCandidata_Load(object sender, EventArgs e)
@@ -100,21 +105,6 @@ namespace ProyectoInnovaDESK.Views
                 e.Handled = true;
                 return;
             }
-        }
-
-        private void txtCurp_TextChanged(object sender, EventArgs e)
-        {
-            /*
-            Regex Val = new Regex(@"\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*");
-            if (Val.IsMatch(txtCurp.Text))
-            {
-
-            }
-            else
-            {
-                MessageBox.Show("Formato de curp incorrecto", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                txtCurp.Focus();
-            }*/
         }
     }
 }

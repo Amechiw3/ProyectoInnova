@@ -30,11 +30,30 @@ namespace ProyectoInnovaDESK.Views
             }
             if (uHelper != null)
             {
-                //TODO: ACTIVAR TODOS LOS CONTROLES SEGUN EL PERMISO
+                procesarPermisos();
             }
             else
             {
                 MessageBox.Show("Se require se autentifique", "Eror..", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        public void procesarPermisos()
+        {
+            int permiso = 0;
+            foreach (object obj in this.groupBox1.Controls)
+            {
+                if (obj is Button)
+                {
+                    Button tsmi = (Button)obj;
+                    permiso = Convert.ToInt32(tsmi.Tag);
+                    //var SessionActiva = frmMainSistema.SessionActiva;
+                    tsmi.Enabled = uHelper.TienePermisos(permiso);
+                    if (!tsmi.Enabled)
+                    {
+                        tsmi.BackColor = Color.FromArgb(211, 47, 47);
+                    }
+                }
             }
         }
 
@@ -48,6 +67,21 @@ namespace ProyectoInnovaDESK.Views
         {
             var frm = new frmSeaUsuario();
             frm.Show();
+        }
+
+        private void btnSalir_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void btnMunicipios_Click(object sender, EventArgs e)
+        { 
+
+        }
+
+        private void btnRestricciones_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

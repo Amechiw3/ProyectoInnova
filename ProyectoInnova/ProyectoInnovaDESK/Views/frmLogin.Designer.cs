@@ -43,10 +43,10 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(149, 22);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(141, 22);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(167, 25);
+            this.label1.Size = new System.Drawing.Size(184, 29);
             this.label1.TabIndex = 0;
             this.label1.Text = "Proyecto Innova";
             // 
@@ -61,7 +61,7 @@
             this.groupBox1.Controls.Add(this.txtnoempleado);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Location = new System.Drawing.Point(12, 12);
+            this.groupBox1.Location = new System.Drawing.Point(13, 12);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(440, 297);
             this.groupBox1.TabIndex = 0;
@@ -111,6 +111,7 @@
             // 
             this.txtPassword.Location = new System.Drawing.Point(102, 189);
             this.txtPassword.Name = "txtPassword";
+            this.txtPassword.PasswordChar = '♦';
             this.txtPassword.Size = new System.Drawing.Size(260, 26);
             this.txtPassword.TabIndex = 5;
             this.txtPassword.Text = "123";

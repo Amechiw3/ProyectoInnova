@@ -117,21 +117,20 @@ namespace ProyectoInnovaDESK.Controllers
             }
         }
 
-        public static List<CandidataManager> ListarContenidoBuscar2(string dato = "")
+        /// <summary>
+        /// Esta funcion valida los datos de una candidata para verificar si no se ingreso recientemente
+        /// </summary>
+        /// <param name="candidata">Datos de candidata</param>
+        /// <returns>Regresa una candidata</returns>
+        public static Candidata validarCandidata(Candidata candidata)
         {
             try
             {
                 var ctx = new DataModel();
-                return (from r in ctx.Candidatas.Where(r => r.sNombre.Contains(dato) && r.bStatus == true).ToList()
-                        select new CandidataManager
-                        {
-                            pkCandidata = r.pkCandidata,
-                            sNombre = $"{r.sNombre} {r.sApellido}",
-                            Fotografia = ImagenTool.Base64StringToBitmap(r.fotografia),
-                            sDescripcion = r.sDescripcion,
-                            sNivelEstudios = r.sNivelEstudios,
-                            sAnios = (DateTime.Now.Year - r.dfnac.Year).ToString(),
-                        }).ToList();
+                return ctx.Candidatas.Include("municipio").Include("usuarios")
+                    .Where( r => r.sAnioConvocatoria == candidata.sAnioConvocatoria && 
+                            r.sCurp == candidata.sCurp && 
+                            r.municipio.pkMunicipio == candidata.municipio.pkMunicipio).FirstOrDefault();
             }
             catch (Exception ex)
             {
