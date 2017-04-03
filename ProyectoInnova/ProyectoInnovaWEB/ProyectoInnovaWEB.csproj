@@ -90,7 +90,7 @@
     </Reference>
     <Reference Include="MySql.Data.Entity.EF6, Version=6.9.9.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\..\Desktop\Referencia\MySql.Data.Entity.EF6.dll</HintPath>
+      <HintPath>..\..\..\EntityFrameworLoteAutos\LoteAutosGit\LoteAutosGit\bin\Debug\MySql.Data.Entity.EF6.dll</HintPath>
     </Reference>
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />

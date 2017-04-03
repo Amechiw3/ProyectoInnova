@@ -29,7 +29,7 @@ namespace ProyectoInnovaDESK.Views
 
             if (CURP.IsMatch(txtCurp.Text))
             {
-                if (EMAIL.IsMatch(txtCurp.Text))
+                if (EMAIL.IsMatch(txtCorreo.Text))
                 {
                     if (webCamCandidatas.ImagenString != "")
                     {

@@ -55,6 +55,9 @@
       <HintPath>..\packages\MySql.Data.Entity.6.9.9\lib\net45\MySql.Data.Entity.EF6.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="ProyectoInnovaDESK">
+      <HintPath>obj\Debug\ProyectoInnovaDESK.exe</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
@@ -152,6 +155,12 @@
     <Compile Include="Views\frmAddCandidata.Designer.cs">
       <DependentUpon>frmAddCandidata.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\frmAddMunicipio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\frmAddMunicipio.Designer.cs">
+      <DependentUpon>frmAddMunicipio.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\frmListCandidata.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -204,11 +213,17 @@
     <EmbeddedResource Include="userControl\ucFichaCandidata.resx">
       <DependentUpon>ucFichaCandidata.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="userControl\ucFichaMunicipio.resx">
+      <DependentUpon>ucFichaMunicipio.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="userControl\webCamCandidatas.resx">
       <DependentUpon>webCamCandidatas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\frmAddCandidata.resx">
       <DependentUpon>frmAddCandidata.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\frmAddMunicipio.resx">
+      <DependentUpon>frmAddMunicipio.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\frmListCandidata.resx">
       <DependentUpon>frmListCandidata.cs</DependentUpon>
