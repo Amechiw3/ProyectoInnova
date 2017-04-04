@@ -31,6 +31,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.button1 = new System.Windows.Forms.Button();
+            this.crpVReporte = new CrystalDecisions.Windows.Forms.CrystalReportViewer();
             this.crystalReportViewer1 = new CrystalDecisions.Windows.Forms.CrystalReportViewer();
             this.SuspendLayout();
             // 
@@ -59,6 +60,20 @@
             this.button1.TabIndex = 2;
             this.button1.Text = "Generar";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // crpVReporte
+            // 
+            this.crpVReporte.ActiveViewIndex = -1;
+            this.crpVReporte.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.crpVReporte.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.crpVReporte.Cursor = System.Windows.Forms.Cursors.Default;
+            this.crpVReporte.Location = new System.Drawing.Point(16, 46);
+            this.crpVReporte.Name = "crpVReporte";
+            this.crpVReporte.Size = new System.Drawing.Size(676, 383);
+            this.crpVReporte.TabIndex = 3;
             // 
             // crystalReportViewer1
             // 
@@ -76,8 +91,9 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(30)))), ((int)(((byte)(99)))));
             this.ClientSize = new System.Drawing.Size(704, 441);
-            this.Controls.Add(this.crystalReportViewer1);
+            this.Controls.Add(this.crpVReporte);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.label1);
@@ -85,6 +101,7 @@
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "frmRptCandidataConvocatoria";
             this.Text = "Reporte de Candidatas por Convo";
+            this.Load += new System.EventHandler(this.frmRptCandidataConvocatoria_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -95,6 +112,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Button button1;
+        private CrystalDecisions.Windows.Forms.CrystalReportViewer crpVReporte;
         private CrystalDecisions.Windows.Forms.CrystalReportViewer crystalReportViewer1;
     }
 }
