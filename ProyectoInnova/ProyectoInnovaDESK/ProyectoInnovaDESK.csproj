@@ -52,6 +52,8 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="FlashControlV71, Version=1.0.3187.32366, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="Microsoft.ReportViewer.Common, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL" />
     <Reference Include="MySql.Data, Version=6.9.9.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
       <HintPath>..\packages\MySql.Data.6.9.9\lib\net45\MySql.Data.dll</HintPath>
       <Private>True</Private>
@@ -82,19 +84,16 @@
     <Compile Include="Controllers\MunicipioManager.cs" />
     <Compile Include="Controllers\RolManager.cs" />
     <Compile Include="Controllers\UsuarioManager.cs" />
+    <Compile Include="Reportes\Candidatas.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Candidatas.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Reportes\Form1.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Reportes\Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Reportes\Candidatas.cs">
-      <DependentUpon>Candidatas.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="Reportes\Candidatas.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Candidatas.xsd</DependentUpon>
     </Compile>
     <Compile Include="Reportes\frmRptCandidataConvocatoria.cs">
       <SubType>Form</SubType>
@@ -102,10 +101,56 @@
     <Compile Include="Reportes\frmRptCandidataConvocatoria.Designer.cs">
       <DependentUpon>frmRptCandidataConvocatoria.cs</DependentUpon>
     </Compile>
+    <Compile Include="Reportes\frmRptCandidataPopular.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\frmRptCandidataPopular.Designer.cs">
+      <DependentUpon>frmRptCandidataPopular.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\frmRptCandidataPopularMunicipio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\frmRptCandidataPopularMunicipio.Designer.cs">
+      <DependentUpon>frmRptCandidataPopularMunicipio.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\frmRptCandidataUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\frmRptCandidataUsuario.Designer.cs">
+      <DependentUpon>frmRptCandidataUsuario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\rptCandidataConvocatoria.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptCandidataConvocatoria.rpt</DependentUpon>
+      <SubType>Component</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
     <Compile Include="Reportes\rptCandidataMunicipio.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>rptCandidataMunicipio.rpt</DependentUpon>
+      <SubType>Component</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="Reportes\rptCandidataPopular.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptCandidataPopular.rpt</DependentUpon>
+      <SubType>Component</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="Reportes\rptCandidataPopularMunicipo.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptCandidataPopularMunicipo.rpt</DependentUpon>
+      <SubType>Component</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="Reportes\rptCandidataUsuario.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptCandidataUsuario.rpt</DependentUpon>
       <SubType>Component</SubType>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Compile>
@@ -205,6 +250,12 @@
     <Compile Include="Views\frmPrincipal.Designer.cs">
       <DependentUpon>frmPrincipal.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\frmReportes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\frmReportes.Designer.cs">
+      <DependentUpon>frmReportes.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\frmSeaCandidata.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -254,9 +305,38 @@
     <EmbeddedResource Include="Reportes\frmRptCandidataConvocatoria.resx">
       <DependentUpon>frmRptCandidataConvocatoria.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\frmRptCandidataPopular.resx">
+      <DependentUpon>frmRptCandidataPopular.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\frmRptCandidataPopularMunicipio.resx">
+      <DependentUpon>frmRptCandidataPopularMunicipio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\frmRptCandidataUsuario.resx">
+      <DependentUpon>frmRptCandidataUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\rptCandidataConvocatoria.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptCandidataConvocatoria.cs</LastGenOutput>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
     <EmbeddedResource Include="Reportes\rptCandidataMunicipio.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>rptCandidataMunicipio.cs</LastGenOutput>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\rptCandidataPopular.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptCandidataPopular.cs</LastGenOutput>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\rptCandidataPopularMunicipo.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptCandidataPopularMunicipo.cs</LastGenOutput>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\rptCandidataUsuario.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptCandidataUsuario.cs</LastGenOutput>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
     <EmbeddedResource Include="userControl\ucFichaCandidata.resx">
@@ -279,6 +359,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\frmPrincipal.resx">
       <DependentUpon>frmPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\frmReportes.resx">
+      <DependentUpon>frmReportes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\frmSeaCandidata.resx">
       <DependentUpon>frmSeaCandidata.cs</DependentUpon>

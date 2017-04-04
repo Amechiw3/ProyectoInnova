@@ -23,6 +23,10 @@ namespace ProyectoInnovaDESK.Controllers
         public String sAnios { get; set; }
         public String sDescripcion { get; set; }
         public String sNivelEstudios { get; set; }
+        public String sAniosConvocatoria { get; set; }
+        public String municipio { get; set; }
+        public String sCorreo { get; set; }
+        public String usuario { get; set; }
 
         public int Votos { get; set; }
 
@@ -137,17 +141,26 @@ namespace ProyectoInnovaDESK.Controllers
                 throw;
             }
         }
+
         /// <summary>
         /// Esta funcion regresa una lista de candidatas por municipo
         /// </summary>
         /// <param name="pkMunicipo">Llave primaria de municipio</param>
         /// <returns></returns>
-        public static  List<Candidata> reporteCandidataMunicipio(int pkMunicipo)
+        public static  List<CandidataManager> reporteCandidataMunicipio(int pkMunicipo)
         {
             try
             {
                 var ctx = new DataModel();
-                return ctx.Candidatas.Where(r => r.municipio.pkMunicipio == pkMunicipo).ToList();
+                return (from r in ctx.Candidatas.Include("municipio").Include("usuarios").Where(r => r.municipio.pkMunicipio == pkMunicipo).ToList()
+                        select new CandidataManager
+                        {
+                            pkCandidata =r.pkCandidata,
+                            sNombre = $"{r.sNombre} {r.sApellido}",
+                            sCorreo = r.sCorreo,
+                            sAniosConvocatoria = r.sAnioConvocatoria,
+                            municipio = r.municipio.sNombre
+                        }).ToList();
             }
             catch (Exception)
             {
@@ -177,6 +190,137 @@ namespace ProyectoInnovaDESK.Controllers
 
         }
 
+        public static List<CandidataManager> reporteCandidataAnioConvocatoria(string AnioConvocatoria)
+        {
+            try
+            {
+                var ctx = new DataModel();
+                return (from r in ctx.Candidatas.Include("municipio").Include("usuarios").Where(r => r.sAnioConvocatoria == AnioConvocatoria).ToList()
+                select new CandidataManager
+                        {
+                            pkCandidata = r.pkCandidata,
+                            sNombre = $"{r.sNombre} {r.sApellido}",
+                            sCorreo = r.sCorreo,
+                            sAniosConvocatoria = r.sAnioConvocatoria,
+                            municipio = r.municipio.sNombre
+                        }).ToList();
+            }
+            catch (Exception)
+            {
 
+                throw;
+            }
+        }
+
+        public static List<CandidataManager> reporteCandidataUsuario(int pkUsuario)
+        {
+            try
+            {
+                var ctx = new DataModel();
+                return (from r in ctx.Candidatas.Include("municipio").Include("usuarios").Where(r => r.usuarios.pkUsuario == pkUsuario).ToList()
+                        select new CandidataManager
+                        {
+                            pkCandidata = r.pkCandidata,
+                            sNombre = $"{r.sNombre} {r.sApellido}",
+                            sCorreo = r.sCorreo,
+                            sAniosConvocatoria = r.sAnioConvocatoria,
+                            municipio = r.municipio.sNombre,
+                            usuario = $"{r.usuarios.sNombre} {r.usuarios.sAppellidos}"
+                        }).ToList();
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+
+        public static List<CandidataManager> ListarCandidatasPopulares3()
+        {
+            try
+            {
+                var ctx = new DataModel();
+                List<CandidataManager> listacompleta = new List<CandidataManager>();
+                foreach (var item in ctx.Municipios.Where(r => r.bStatus == true).ToList())
+                {
+                    listacompleta.AddRange((from r in ctx.Candidatas.Where(r => r.municipio.pkMunicipio == item.pkMunicipio && r.bStatus == true).ToList()
+                                            select new CandidataManager
+                                            {
+                                                pkCandidata = r.pkCandidata,
+                                                sNombre = $"{r.sNombre} {r.sApellido}",
+                                                Fotografia = ImagenTool.Base64StringToBitmap(r.fotografia),
+                                                sDescripcion = r.sDescripcion,
+                                                sCorreo = r.sCorreo,
+                                                sNivelEstudios = r.sNivelEstudios,
+                                                sAnios = (DateTime.Now.Year - r.dfnac.Year).ToString(),
+                                                municipio = item.sNombre,
+                                                Votos = contarVotos(r.pkCandidata)
+                                            }).OrderByDescending(c => c.Votos).Take(3).ToList());
+                }
+
+                return listacompleta;
+
+            }
+            catch (Exception ex)
+            {
+                throw;
+            }
+        }
+
+        public static List<CandidataManager> ListarCandidatasPopularesMunicipio()
+        {
+            try
+            {
+                var ctx = new DataModel();
+                List<CandidataManager> listacompleta = new List<CandidataManager>();
+                foreach (var item in ctx.Municipios.Where(r => r.bStatus == true).ToList())
+                {
+                    listacompleta.AddRange((from r in ctx.Candidatas.Where(r => r.municipio.pkMunicipio == item.pkMunicipio && r.bStatus == true).ToList()
+                                            select new CandidataManager
+                                            {
+                                                pkCandidata = r.pkCandidata,
+                                                sNombre = $"{r.sNombre} {r.sApellido}",
+                                                Fotografia = ImagenTool.Base64StringToBitmap(r.fotografia),
+                                                sDescripcion = r.sDescripcion,
+                                                sCorreo = r.sCorreo,
+                                                sNivelEstudios = r.sNivelEstudios,
+                                                sAnios = (DateTime.Now.Year - r.dfnac.Year).ToString(),
+                                                municipio = item.sNombre,
+                                                Votos = contarVotos(r.pkCandidata)
+                                            }).OrderByDescending(c => c.Votos).Take(1).ToList());
+                }
+
+                return listacompleta;
+
+            }
+            catch (Exception ex)
+            {
+                throw;
+            }
+        }
+
+        /// <summary>
+        /// Esta funcion esta encargada de contar los votos que se han realizado
+        /// por una candidadta
+        /// </summary>
+        /// <param name="ID">pkCandididata</param>
+        /// <param name="voto">Votos realizados</param>
+        /// <returns>Regresa un numero de votos</returns>
+        public static int contarVotos(int ID, int voto = 0)
+        {
+            try
+            {
+                var ctx = new DataModel();
+                var listaCandidatas = CandidataManager.getData(ID);
+                var listaVotos = ctx.Rankings.Where(r => r.candidata.pkCandidata == listaCandidatas.pkCandidata).ToList();
+                voto = listaVotos.Count();
+                return voto;
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
     }
 }

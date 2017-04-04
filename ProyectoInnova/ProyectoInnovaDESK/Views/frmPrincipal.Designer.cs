@@ -30,9 +30,8 @@
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnSalir = new System.Windows.Forms.Button();
-            this.btnRestricciones = new System.Windows.Forms.Button();
             this.btnMunicipios = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.btnReportes = new System.Windows.Forms.Button();
             this.btnUsuarios = new System.Windows.Forms.Button();
             this.btnCandidata = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
@@ -42,9 +41,8 @@
             // 
             this.groupBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(189)))), ((int)(((byte)(189)))));
             this.groupBox1.Controls.Add(this.btnSalir);
-            this.groupBox1.Controls.Add(this.btnRestricciones);
             this.groupBox1.Controls.Add(this.btnMunicipios);
-            this.groupBox1.Controls.Add(this.button3);
+            this.groupBox1.Controls.Add(this.btnReportes);
             this.groupBox1.Controls.Add(this.btnUsuarios);
             this.groupBox1.Controls.Add(this.btnCandidata);
             this.groupBox1.Location = new System.Drawing.Point(18, 18);
@@ -66,18 +64,6 @@
             this.btnSalir.UseVisualStyleBackColor = false;
             this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
-            // btnRestricciones
-            // 
-            this.btnRestricciones.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(63)))), ((int)(((byte)(159)))));
-            this.btnRestricciones.Location = new System.Drawing.Point(257, 182);
-            this.btnRestricciones.Name = "btnRestricciones";
-            this.btnRestricciones.Size = new System.Drawing.Size(182, 71);
-            this.btnRestricciones.TabIndex = 4;
-            this.btnRestricciones.Tag = "21";
-            this.btnRestricciones.Text = "Restricciones";
-            this.btnRestricciones.UseVisualStyleBackColor = false;
-            this.btnRestricciones.Click += new System.EventHandler(this.btnRestricciones_Click);
-            // 
             // btnMunicipios
             // 
             this.btnMunicipios.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(63)))), ((int)(((byte)(159)))));
@@ -90,16 +76,17 @@
             this.btnMunicipios.UseVisualStyleBackColor = false;
             this.btnMunicipios.Click += new System.EventHandler(this.btnMunicipios_Click);
             // 
-            // button3
+            // btnReportes
             // 
-            this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(63)))), ((int)(((byte)(159)))));
-            this.button3.Location = new System.Drawing.Point(445, 105);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(182, 71);
-            this.button3.TabIndex = 2;
-            this.button3.Tag = "11";
-            this.button3.Text = "Reportes";
-            this.button3.UseVisualStyleBackColor = false;
+            this.btnReportes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(63)))), ((int)(((byte)(159)))));
+            this.btnReportes.Location = new System.Drawing.Point(445, 105);
+            this.btnReportes.Name = "btnReportes";
+            this.btnReportes.Size = new System.Drawing.Size(182, 71);
+            this.btnReportes.TabIndex = 2;
+            this.btnReportes.Tag = "11";
+            this.btnReportes.Text = "Reportes";
+            this.btnReportes.UseVisualStyleBackColor = false;
+            this.btnReportes.Click += new System.EventHandler(this.btnReportes_Click);
             // 
             // btnUsuarios
             // 
@@ -148,11 +135,10 @@
         #endregion
 
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button btnReportes;
         private System.Windows.Forms.Button btnUsuarios;
         private System.Windows.Forms.Button btnCandidata;
         private System.Windows.Forms.Button btnSalir;
-        private System.Windows.Forms.Button btnRestricciones;
         private System.Windows.Forms.Button btnMunicipios;
     }
 }

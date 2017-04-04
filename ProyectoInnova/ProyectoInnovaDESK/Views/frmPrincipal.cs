@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 using ProyectoInnovaDESK.Controllers.Helpers;
+using ProyectoInnovaDESK.Reportes;
 
 namespace ProyectoInnovaDESK.Views
 {
@@ -34,7 +35,8 @@ namespace ProyectoInnovaDESK.Views
             }
             else
             {
-                MessageBox.Show("Se require se autentifique", "Eror..", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Se require se autentifique", "Error..", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                this.Close();
             }
         }
 
@@ -81,8 +83,13 @@ namespace ProyectoInnovaDESK.Views
 
         private void btnRestricciones_Click(object sender, EventArgs e)
         {
-            var frm = new Form1();
-            frm.ShowDialog();
+
+        }
+
+        private void btnReportes_Click(object sender, EventArgs e)
+        {
+            var frmreportes = new frmReportes();
+            frmreportes.ShowDialog();
         }
     }
 }

@@ -285,11 +285,15 @@ namespace ProyectoInnovaDESK.Reportes {
             
             private global::System.Data.DataColumn columnsApellido;
             
-            private global::System.Data.DataColumn columnsCurp;
-            
             private global::System.Data.DataColumn columnsCorreo;
             
+            private global::System.Data.DataColumn columnsAniosConvocatoria;
+            
             private global::System.Data.DataColumn columnmunicipio;
+            
+            private global::System.Data.DataColumn columnusuario;
+            
+            private global::System.Data.DataColumn columnVotos;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
@@ -350,14 +354,6 @@ namespace ProyectoInnovaDESK.Reportes {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn sCurpColumn {
-                get {
-                    return this.columnsCurp;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public global::System.Data.DataColumn sCorreoColumn {
                 get {
                     return this.columnsCorreo;
@@ -366,9 +362,33 @@ namespace ProyectoInnovaDESK.Reportes {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn sAniosConvocatoriaColumn {
+                get {
+                    return this.columnsAniosConvocatoria;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public global::System.Data.DataColumn municipioColumn {
                 get {
                     return this.columnmunicipio;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn usuarioColumn {
+                get {
+                    return this.columnusuario;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn VotosColumn {
+                get {
+                    return this.columnVotos;
                 }
             }
             
@@ -409,15 +429,17 @@ namespace ProyectoInnovaDESK.Reportes {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public CandidatasRow AddCandidatasRow(string pkCandidata, string sNombre, string sApellido, string sCurp, string sCorreo, string municipio) {
+            public CandidatasRow AddCandidatasRow(string pkCandidata, string sNombre, string sApellido, string sCorreo, string sAniosConvocatoria, string municipio, string usuario, string Votos) {
                 CandidatasRow rowCandidatasRow = ((CandidatasRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         pkCandidata,
                         sNombre,
                         sApellido,
-                        sCurp,
                         sCorreo,
-                        municipio};
+                        sAniosConvocatoria,
+                        municipio,
+                        usuario,
+                        Votos};
                 rowCandidatasRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowCandidatasRow);
                 return rowCandidatasRow;
@@ -443,9 +465,11 @@ namespace ProyectoInnovaDESK.Reportes {
                 this.columnpkCandidata = base.Columns["pkCandidata"];
                 this.columnsNombre = base.Columns["sNombre"];
                 this.columnsApellido = base.Columns["sApellido"];
-                this.columnsCurp = base.Columns["sCurp"];
                 this.columnsCorreo = base.Columns["sCorreo"];
+                this.columnsAniosConvocatoria = base.Columns["sAniosConvocatoria"];
                 this.columnmunicipio = base.Columns["municipio"];
+                this.columnusuario = base.Columns["usuario"];
+                this.columnVotos = base.Columns["Votos"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -457,12 +481,16 @@ namespace ProyectoInnovaDESK.Reportes {
                 base.Columns.Add(this.columnsNombre);
                 this.columnsApellido = new global::System.Data.DataColumn("sApellido", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnsApellido);
-                this.columnsCurp = new global::System.Data.DataColumn("sCurp", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnsCurp);
                 this.columnsCorreo = new global::System.Data.DataColumn("sCorreo", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnsCorreo);
+                this.columnsAniosConvocatoria = new global::System.Data.DataColumn("sAniosConvocatoria", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnsAniosConvocatoria);
                 this.columnmunicipio = new global::System.Data.DataColumn("municipio", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnmunicipio);
+                this.columnusuario = new global::System.Data.DataColumn("usuario", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnusuario);
+                this.columnVotos = new global::System.Data.DataColumn("Votos", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnVotos);
                 this.ExtendedProperties.Add("Generator_TablePropName", "_Candidatas");
                 this.ExtendedProperties.Add("Generator_UserTableName", "Candidatas");
             }
@@ -655,22 +683,6 @@ namespace ProyectoInnovaDESK.Reportes {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string sCurp {
-                get {
-                    try {
-                        return ((string)(this[this.tableCandidatas.sCurpColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'sCurp\' de la tabla \'Candidatas\' es DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableCandidatas.sCurpColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public string sCorreo {
                 get {
                     try {
@@ -687,6 +699,22 @@ namespace ProyectoInnovaDESK.Reportes {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string sAniosConvocatoria {
+                get {
+                    try {
+                        return ((string)(this[this.tableCandidatas.sAniosConvocatoriaColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'sAniosConvocatoria\' de la tabla \'Candidatas\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableCandidatas.sAniosConvocatoriaColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public string municipio {
                 get {
                     try {
@@ -698,6 +726,38 @@ namespace ProyectoInnovaDESK.Reportes {
                 }
                 set {
                     this[this.tableCandidatas.municipioColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string usuario {
+                get {
+                    try {
+                        return ((string)(this[this.tableCandidatas.usuarioColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'usuario\' de la tabla \'Candidatas\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableCandidatas.usuarioColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string Votos {
+                get {
+                    try {
+                        return ((string)(this[this.tableCandidatas.VotosColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'Votos\' de la tabla \'Candidatas\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableCandidatas.VotosColumn] = value;
                 }
             }
             
@@ -739,18 +799,6 @@ namespace ProyectoInnovaDESK.Reportes {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IssCurpNull() {
-                return this.IsNull(this.tableCandidatas.sCurpColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetsCurpNull() {
-                this[this.tableCandidatas.sCurpColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IssCorreoNull() {
                 return this.IsNull(this.tableCandidatas.sCorreoColumn);
             }
@@ -763,6 +811,18 @@ namespace ProyectoInnovaDESK.Reportes {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IssAniosConvocatoriaNull() {
+                return this.IsNull(this.tableCandidatas.sAniosConvocatoriaColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetsAniosConvocatoriaNull() {
+                this[this.tableCandidatas.sAniosConvocatoriaColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsmunicipioNull() {
                 return this.IsNull(this.tableCandidatas.municipioColumn);
             }
@@ -771,6 +831,30 @@ namespace ProyectoInnovaDESK.Reportes {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetmunicipioNull() {
                 this[this.tableCandidatas.municipioColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsusuarioNull() {
+                return this.IsNull(this.tableCandidatas.usuarioColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetusuarioNull() {
+                this[this.tableCandidatas.usuarioColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsVotosNull() {
+                return this.IsNull(this.tableCandidatas.VotosColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetVotosNull() {
+                this[this.tableCandidatas.VotosColumn] = global::System.Convert.DBNull;
             }
         }
         

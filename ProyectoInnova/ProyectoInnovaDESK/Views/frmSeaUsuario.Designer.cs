@@ -44,32 +44,38 @@
             // 
             // btnBorrar
             // 
+            this.btnBorrar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(63)))), ((int)(((byte)(159)))));
             this.btnBorrar.Location = new System.Drawing.Point(133, 355);
             this.btnBorrar.Name = "btnBorrar";
             this.btnBorrar.Size = new System.Drawing.Size(110, 38);
             this.btnBorrar.TabIndex = 13;
+            this.btnBorrar.Tag = "20";
             this.btnBorrar.Text = "Borrar";
-            this.btnBorrar.UseVisualStyleBackColor = true;
+            this.btnBorrar.UseVisualStyleBackColor = false;
             this.btnBorrar.Click += new System.EventHandler(this.btnBorrar_Click);
             // 
             // bnEditar
             // 
+            this.bnEditar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(63)))), ((int)(((byte)(159)))));
             this.bnEditar.Location = new System.Drawing.Point(17, 355);
             this.bnEditar.Name = "bnEditar";
             this.bnEditar.Size = new System.Drawing.Size(110, 38);
             this.bnEditar.TabIndex = 12;
+            this.bnEditar.Tag = "19";
             this.bnEditar.Text = "Editar";
-            this.bnEditar.UseVisualStyleBackColor = true;
+            this.bnEditar.UseVisualStyleBackColor = false;
             this.bnEditar.Click += new System.EventHandler(this.bnEditar_Click);
             // 
             // btnAgregar
             // 
+            this.btnAgregar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(63)))), ((int)(((byte)(159)))));
             this.btnAgregar.Location = new System.Drawing.Point(582, 42);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(110, 38);
             this.btnAgregar.TabIndex = 11;
+            this.btnAgregar.Tag = "18";
             this.btnAgregar.Text = "Agregar";
-            this.btnAgregar.UseVisualStyleBackColor = true;
+            this.btnAgregar.UseVisualStyleBackColor = false;
             this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
             // txtBuscar
@@ -78,6 +84,7 @@
             this.txtBuscar.Name = "txtBuscar";
             this.txtBuscar.Size = new System.Drawing.Size(614, 26);
             this.txtBuscar.TabIndex = 10;
+            this.txtBuscar.Tag = "17";
             // 
             // label2
             // 
@@ -150,7 +157,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(189)))), ((int)(((byte)(189)))));
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(30)))), ((int)(((byte)(99)))));
             this.ClientSize = new System.Drawing.Size(704, 441);
             this.Controls.Add(this.btnBorrar);
             this.Controls.Add(this.bnEditar);
