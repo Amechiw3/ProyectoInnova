@@ -1,0 +1,174 @@
+﻿namespace ProyectoInnovaDESK.Views
+{
+    partial class frmSeaMunicipios
+    {
+        /// <summary>
+        /// Required designer variable.
+        /// </summary>
+        private System.ComponentModel.IContainer components = null;
+
+        /// <summary>
+        /// Clean up any resources being used.
+        /// </summary>
+        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+
+        #region Windows Form Designer generated code
+
+        /// <summary>
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
+        /// </summary>
+        private void InitializeComponent()
+        {
+            this.btnBorrar = new System.Windows.Forms.Button();
+            this.bnEditar = new System.Windows.Forms.Button();
+            this.btnAgregar = new System.Windows.Forms.Button();
+            this.txtBuscar = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.lblRegistros = new System.Windows.Forms.Label();
+            this.dgvDatos = new System.Windows.Forms.DataGridView();
+            this.Codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDatos)).BeginInit();
+            this.SuspendLayout();
+            // 
+            // btnBorrar
+            // 
+            this.btnBorrar.Location = new System.Drawing.Point(133, 355);
+            this.btnBorrar.Name = "btnBorrar";
+            this.btnBorrar.Size = new System.Drawing.Size(110, 38);
+            this.btnBorrar.TabIndex = 13;
+            this.btnBorrar.Text = "Borrar";
+            this.btnBorrar.UseVisualStyleBackColor = true;
+            // 
+            // bnEditar
+            // 
+            this.bnEditar.Location = new System.Drawing.Point(17, 355);
+            this.bnEditar.Name = "bnEditar";
+            this.bnEditar.Size = new System.Drawing.Size(110, 38);
+            this.bnEditar.TabIndex = 12;
+            this.bnEditar.Text = "Editar";
+            this.bnEditar.UseVisualStyleBackColor = true;
+            // 
+            // btnAgregar
+            // 
+            this.btnAgregar.Location = new System.Drawing.Point(582, 42);
+            this.btnAgregar.Name = "btnAgregar";
+            this.btnAgregar.Size = new System.Drawing.Size(110, 38);
+            this.btnAgregar.TabIndex = 11;
+            this.btnAgregar.Text = "Agregar";
+            this.btnAgregar.UseVisualStyleBackColor = true;
+            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
+            // 
+            // txtBuscar
+            // 
+            this.txtBuscar.Location = new System.Drawing.Point(78, 10);
+            this.txtBuscar.Name = "txtBuscar";
+            this.txtBuscar.Size = new System.Drawing.Size(614, 26);
+            this.txtBuscar.TabIndex = 10;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(13, 13);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(59, 20);
+            this.label2.TabIndex = 9;
+            this.label2.Text = "Buscar";
+            // 
+            // lblRegistros
+            // 
+            this.lblRegistros.AutoSize = true;
+            this.lblRegistros.Location = new System.Drawing.Point(13, 410);
+            this.lblRegistros.Name = "lblRegistros";
+            this.lblRegistros.Size = new System.Drawing.Size(77, 20);
+            this.lblRegistros.TabIndex = 8;
+            this.lblRegistros.Text = "Registros";
+            // 
+            // dgvDatos
+            // 
+            this.dgvDatos.AllowUserToAddRows = false;
+            this.dgvDatos.AllowUserToDeleteRows = false;
+            this.dgvDatos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvDatos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Codigo,
+            this.Nombre,
+            this.Descripcion});
+            this.dgvDatos.Location = new System.Drawing.Point(17, 88);
+            this.dgvDatos.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.dgvDatos.Name = "dgvDatos";
+            this.dgvDatos.ReadOnly = true;
+            this.dgvDatos.Size = new System.Drawing.Size(675, 259);
+            this.dgvDatos.TabIndex = 7;
+            this.dgvDatos.DataSourceChanged += new System.EventHandler(this.dgvDatos_DataSourceChanged);
+            // 
+            // Codigo
+            // 
+            this.Codigo.DataPropertyName = "pkMunicipio";
+            this.Codigo.HeaderText = "Codigo";
+            this.Codigo.Name = "Codigo";
+            this.Codigo.ReadOnly = true;
+            this.Codigo.Width = 75;
+            // 
+            // Nombre
+            // 
+            this.Nombre.DataPropertyName = "sNombre";
+            this.Nombre.HeaderText = "Nombre";
+            this.Nombre.Name = "Nombre";
+            this.Nombre.ReadOnly = true;
+            this.Nombre.Width = 250;
+            // 
+            // Descripcion
+            // 
+            this.Descripcion.DataPropertyName = "sDescripcion";
+            this.Descripcion.HeaderText = "Descripcion";
+            this.Descripcion.Name = "Descripcion";
+            this.Descripcion.ReadOnly = true;
+            this.Descripcion.Width = 350;
+            // 
+            // frmSeaMunicipios
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(704, 441);
+            this.Controls.Add(this.btnBorrar);
+            this.Controls.Add(this.bnEditar);
+            this.Controls.Add(this.btnAgregar);
+            this.Controls.Add(this.txtBuscar);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.lblRegistros);
+            this.Controls.Add(this.dgvDatos);
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.Name = "frmSeaMunicipios";
+            this.Text = "frmSeaMunicipios";
+            this.Load += new System.EventHandler(this.frmSeaMunicipios_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDatos)).EndInit();
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
+        }
+
+        #endregion
+
+        private System.Windows.Forms.Button btnBorrar;
+        private System.Windows.Forms.Button bnEditar;
+        private System.Windows.Forms.Button btnAgregar;
+        private System.Windows.Forms.TextBox txtBuscar;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lblRegistros;
+        private System.Windows.Forms.DataGridView dgvDatos;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Codigo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Descripcion;
+    }
+}

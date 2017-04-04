@@ -29,18 +29,18 @@
         private void InitializeComponent()
         {
             this.dgvDatos = new System.Windows.Forms.DataGridView();
-            this.lblRegistros = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.txtBuscar = new System.Windows.Forms.TextBox();
-            this.btnAgregar = new System.Windows.Forms.Button();
-            this.bnEditar = new System.Windows.Forms.Button();
-            this.btnBorrar = new System.Windows.Forms.Button();
             this.Codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Fotografia = new System.Windows.Forms.DataGridViewImageColumn();
             this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Edad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Estudios = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lblRegistros = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.txtBuscar = new System.Windows.Forms.TextBox();
+            this.btnAgregar = new System.Windows.Forms.Button();
+            this.bnEditar = new System.Windows.Forms.Button();
+            this.btnBorrar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDatos)).BeginInit();
             this.SuspendLayout();
             // 
@@ -63,6 +63,59 @@
             this.dgvDatos.Size = new System.Drawing.Size(675, 259);
             this.dgvDatos.TabIndex = 0;
             this.dgvDatos.DataSourceChanged += new System.EventHandler(this.dgvDatos_DataSourceChanged);
+            // 
+            // Codigo
+            // 
+            this.Codigo.DataPropertyName = "pkCandidata";
+            this.Codigo.HeaderText = "Codigo";
+            this.Codigo.Name = "Codigo";
+            this.Codigo.ReadOnly = true;
+            this.Codigo.Width = 75;
+            // 
+            // Fotografia
+            // 
+            this.Fotografia.DataPropertyName = "Fotografia";
+            this.Fotografia.FillWeight = 300F;
+            this.Fotografia.HeaderText = "Fotografia";
+            this.Fotografia.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.Fotografia.MinimumWidth = 100;
+            this.Fotografia.Name = "Fotografia";
+            this.Fotografia.ReadOnly = true;
+            this.Fotografia.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Fotografia.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.Fotografia.Visible = false;
+            this.Fotografia.Width = 300;
+            // 
+            // Nombre
+            // 
+            this.Nombre.DataPropertyName = "sNombre";
+            this.Nombre.HeaderText = "Nombre";
+            this.Nombre.Name = "Nombre";
+            this.Nombre.ReadOnly = true;
+            this.Nombre.Width = 250;
+            // 
+            // Descripcion
+            // 
+            this.Descripcion.DataPropertyName = "sDescripcion";
+            this.Descripcion.HeaderText = "Descripcion";
+            this.Descripcion.Name = "Descripcion";
+            this.Descripcion.ReadOnly = true;
+            this.Descripcion.Width = 350;
+            // 
+            // Edad
+            // 
+            this.Edad.DataPropertyName = "sAnios";
+            this.Edad.HeaderText = "Edad";
+            this.Edad.Name = "Edad";
+            this.Edad.ReadOnly = true;
+            this.Edad.Width = 50;
+            // 
+            // Estudios
+            // 
+            this.Estudios.DataPropertyName = "sNivelEstudios";
+            this.Estudios.HeaderText = "Estudios";
+            this.Estudios.Name = "Estudios";
+            this.Estudios.ReadOnly = true;
             // 
             // lblRegistros
             // 
@@ -119,59 +172,6 @@
             this.btnBorrar.Text = "Borrar";
             this.btnBorrar.UseVisualStyleBackColor = true;
             this.btnBorrar.Click += new System.EventHandler(this.btnBorrar_Click);
-            // 
-            // Codigo
-            // 
-            this.Codigo.DataPropertyName = "pkCandidata";
-            this.Codigo.HeaderText = "Codigo";
-            this.Codigo.Name = "Codigo";
-            this.Codigo.ReadOnly = true;
-            this.Codigo.Width = 75;
-            // 
-            // Fotografia
-            // 
-            this.Fotografia.DataPropertyName = "Fotografia";
-            this.Fotografia.FillWeight = 300F;
-            this.Fotografia.HeaderText = "Fotografia";
-            this.Fotografia.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
-            this.Fotografia.MinimumWidth = 100;
-            this.Fotografia.Name = "Fotografia";
-            this.Fotografia.ReadOnly = true;
-            this.Fotografia.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.Fotografia.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.Fotografia.Visible = false;
-            this.Fotografia.Width = 300;
-            // 
-            // Nombre
-            // 
-            this.Nombre.DataPropertyName = "sNombre";
-            this.Nombre.HeaderText = "Nombre";
-            this.Nombre.Name = "Nombre";
-            this.Nombre.ReadOnly = true;
-            this.Nombre.Width = 250;
-            // 
-            // Descripcion
-            // 
-            this.Descripcion.DataPropertyName = "sDescripcion";
-            this.Descripcion.HeaderText = "Descripcion";
-            this.Descripcion.Name = "Descripcion";
-            this.Descripcion.ReadOnly = true;
-            this.Descripcion.Width = 350;
-            // 
-            // Edad
-            // 
-            this.Edad.DataPropertyName = "sAnios";
-            this.Edad.HeaderText = "Edad";
-            this.Edad.Name = "Edad";
-            this.Edad.ReadOnly = true;
-            this.Edad.Width = 50;
-            // 
-            // Estudios
-            // 
-            this.Estudios.DataPropertyName = "sNivelEstudios";
-            this.Estudios.HeaderText = "Estudios";
-            this.Estudios.Name = "Estudios";
-            this.Estudios.ReadOnly = true;
             // 
             // frmSeaCandidata
             // 

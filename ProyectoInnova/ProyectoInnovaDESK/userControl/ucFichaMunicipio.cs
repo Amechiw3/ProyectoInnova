@@ -100,7 +100,7 @@ namespace ProyectoInnovaDESK.userControl
             open.Title = "Selecciona Logotipo";
             if (open.ShowDialog() == DialogResult.OK)
             {
-               
+                this.pBoxFoto.ImageLocation = open.FileName;
             }
 
         }
