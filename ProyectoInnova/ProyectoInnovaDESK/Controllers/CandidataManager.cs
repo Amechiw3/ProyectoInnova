@@ -234,5 +234,93 @@ namespace ProyectoInnovaDESK.Controllers
                 throw;
             }
         }
+
+        public static List<CandidataManager> ListarCandidatasPopulares3()
+        {
+            try
+            {
+                var ctx = new DataModel();
+                List<CandidataManager> listacompleta = new List<CandidataManager>();
+                foreach (var item in ctx.Municipios.Where(r => r.bStatus == true).ToList())
+                {
+                    listacompleta.AddRange((from r in ctx.Candidatas.Where(r => r.municipio.pkMunicipio == item.pkMunicipio && r.bStatus == true).ToList()
+                                            select new CandidataManager
+                                            {
+                                                pkCandidata = r.pkCandidata,
+                                                sNombre = $"{r.sNombre} {r.sApellido}",
+                                                Fotografia = ImagenTool.Base64StringToBitmap(r.fotografia),
+                                                sDescripcion = r.sDescripcion,
+                                                sCorreo = r.sCorreo,
+                                                sNivelEstudios = r.sNivelEstudios,
+                                                sAnios = (DateTime.Now.Year - r.dfnac.Year).ToString(),
+                                                municipio = item.sNombre,
+                                                Votos = contarVotos(r.pkCandidata)
+                                            }).OrderByDescending(c => c.Votos).Take(3).ToList());
+                }
+
+                return listacompleta;
+
+            }
+            catch (Exception ex)
+            {
+                throw;
+            }
+        }
+
+        public static List<CandidataManager> ListarCandidatasPopularesMunicipio()
+        {
+            try
+            {
+                var ctx = new DataModel();
+                List<CandidataManager> listacompleta = new List<CandidataManager>();
+                foreach (var item in ctx.Municipios.Where(r => r.bStatus == true).ToList())
+                {
+                    listacompleta.AddRange((from r in ctx.Candidatas.Where(r => r.municipio.pkMunicipio == item.pkMunicipio && r.bStatus == true).ToList()
+                                            select new CandidataManager
+                                            {
+                                                pkCandidata = r.pkCandidata,
+                                                sNombre = $"{r.sNombre} {r.sApellido}",
+                                                Fotografia = ImagenTool.Base64StringToBitmap(r.fotografia),
+                                                sDescripcion = r.sDescripcion,
+                                                sCorreo = r.sCorreo,
+                                                sNivelEstudios = r.sNivelEstudios,
+                                                sAnios = (DateTime.Now.Year - r.dfnac.Year).ToString(),
+                                                municipio = item.sNombre,
+                                                Votos = contarVotos(r.pkCandidata)
+                                            }).OrderByDescending(c => c.Votos).Take(1).ToList());
+                }
+
+                return listacompleta;
+
+            }
+            catch (Exception ex)
+            {
+                throw;
+            }
+        }
+
+        /// <summary>
+        /// Esta funcion esta encargada de contar los votos que se han realizado
+        /// por una candidadta
+        /// </summary>
+        /// <param name="ID">pkCandididata</param>
+        /// <param name="voto">Votos realizados</param>
+        /// <returns>Regresa un numero de votos</returns>
+        public static int contarVotos(int ID, int voto = 0)
+        {
+            try
+            {
+                var ctx = new DataModel();
+                var listaCandidatas = CandidataManager.getData(ID);
+                var listaVotos = ctx.Rankings.Where(r => r.candidata.pkCandidata == listaCandidatas.pkCandidata).ToList();
+                voto = listaVotos.Count();
+                return voto;
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
     }
 }

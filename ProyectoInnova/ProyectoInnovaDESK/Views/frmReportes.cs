@@ -53,8 +53,8 @@ namespace ProyectoInnovaDESK.Views
 
         private void btnRptcandidatapopular_Click(object sender, EventArgs e)
         {
-            var frmrptcandidataanio = new frmRptCandidataConvocatoria();
-            frmrptcandidataanio.ShowDialog();
+            var frmrptcandidatapopular = new frmRptCandidataPopular();
+            frmrptcandidatapopular.ShowDialog();
         }
 
         private void btnRptcandidataporcapturista_Click(object sender, EventArgs e)
@@ -66,6 +66,12 @@ namespace ProyectoInnovaDESK.Views
         private void btnRptcandidatapormunicipo_Click(object sender, EventArgs e)
         {
             var frmrptcandidataanio = new Form1();
+            frmrptcandidataanio.ShowDialog();
+        }
+
+        private void btnRptCandidataPopularMunicipo_Click(object sender, EventArgs e)
+        {
+            var frmrptcandidataanio = new frmRptCandidataPopularMunicipio();
             frmrptcandidataanio.ShowDialog();
         }
     }

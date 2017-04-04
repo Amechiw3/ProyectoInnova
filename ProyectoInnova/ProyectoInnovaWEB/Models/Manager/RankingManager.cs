@@ -31,6 +31,7 @@ namespace ProyectoInnovaWEB.Models.Manager
                 throw;
             }
         }
+
         /// <summary>
         /// Esta funcion esta encargada de contar los votos que se han realizado
         /// por una candidadta

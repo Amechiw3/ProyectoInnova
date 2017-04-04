@@ -33,12 +33,14 @@
             this.btnRptcandidataporanio = new System.Windows.Forms.Button();
             this.btnRptcandidataporcapturista = new System.Windows.Forms.Button();
             this.btnRptcandidatapopular = new System.Windows.Forms.Button();
+            this.btnRptCandidataPopularMunicipo = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(189)))), ((int)(((byte)(189)))));
+            this.groupBox1.Controls.Add(this.btnRptCandidataPopularMunicipo);
             this.groupBox1.Controls.Add(this.btnRptcandidataporcapturista);
             this.groupBox1.Controls.Add(this.btnRptcandidatapopular);
             this.groupBox1.Controls.Add(this.btnRptcandidataporanio);
@@ -54,7 +56,7 @@
             // btnRptcandidatapormunicipo
             // 
             this.btnRptcandidatapormunicipo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(63)))), ((int)(((byte)(159)))));
-            this.btnRptcandidatapormunicipo.Location = new System.Drawing.Point(166, 107);
+            this.btnRptcandidatapormunicipo.Location = new System.Drawing.Point(73, 107);
             this.btnRptcandidatapormunicipo.Name = "btnRptcandidatapormunicipo";
             this.btnRptcandidatapormunicipo.Size = new System.Drawing.Size(182, 71);
             this.btnRptcandidatapormunicipo.TabIndex = 0;
@@ -66,7 +68,7 @@
             // btnRptcandidataporanio
             // 
             this.btnRptcandidataporanio.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(63)))), ((int)(((byte)(159)))));
-            this.btnRptcandidataporanio.Location = new System.Drawing.Point(354, 107);
+            this.btnRptcandidataporanio.Location = new System.Drawing.Point(261, 107);
             this.btnRptcandidataporanio.Name = "btnRptcandidataporanio";
             this.btnRptcandidataporanio.Size = new System.Drawing.Size(182, 71);
             this.btnRptcandidataporanio.TabIndex = 1;
@@ -78,7 +80,7 @@
             // btnRptcandidataporcapturista
             // 
             this.btnRptcandidataporcapturista.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(63)))), ((int)(((byte)(159)))));
-            this.btnRptcandidataporcapturista.Location = new System.Drawing.Point(354, 184);
+            this.btnRptcandidataporcapturista.Location = new System.Drawing.Point(167, 184);
             this.btnRptcandidataporcapturista.Name = "btnRptcandidataporcapturista";
             this.btnRptcandidataporcapturista.Size = new System.Drawing.Size(182, 71);
             this.btnRptcandidataporcapturista.TabIndex = 3;
@@ -90,7 +92,7 @@
             // btnRptcandidatapopular
             // 
             this.btnRptcandidatapopular.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(63)))), ((int)(((byte)(159)))));
-            this.btnRptcandidatapopular.Location = new System.Drawing.Point(166, 185);
+            this.btnRptcandidatapopular.Location = new System.Drawing.Point(449, 107);
             this.btnRptcandidatapopular.Name = "btnRptcandidatapopular";
             this.btnRptcandidatapopular.Size = new System.Drawing.Size(182, 71);
             this.btnRptcandidatapopular.TabIndex = 2;
@@ -98,6 +100,18 @@
             this.btnRptcandidatapopular.Text = "Candidatas mas populares";
             this.btnRptcandidatapopular.UseVisualStyleBackColor = false;
             this.btnRptcandidatapopular.Click += new System.EventHandler(this.btnRptcandidatapopular_Click);
+            // 
+            // btnRptCandidataPopularMunicipo
+            // 
+            this.btnRptCandidataPopularMunicipo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(63)))), ((int)(((byte)(159)))));
+            this.btnRptCandidataPopularMunicipo.Location = new System.Drawing.Point(355, 184);
+            this.btnRptCandidataPopularMunicipo.Name = "btnRptCandidataPopularMunicipo";
+            this.btnRptCandidataPopularMunicipo.Size = new System.Drawing.Size(182, 71);
+            this.btnRptCandidataPopularMunicipo.TabIndex = 4;
+            this.btnRptCandidataPopularMunicipo.Tag = "22";
+            this.btnRptCandidataPopularMunicipo.Text = "Candidatas mas popular por municipo";
+            this.btnRptCandidataPopularMunicipo.UseVisualStyleBackColor = false;
+            this.btnRptCandidataPopularMunicipo.Click += new System.EventHandler(this.btnRptCandidataPopularMunicipo_Click);
             // 
             // frmReportes
             // 
@@ -126,5 +140,6 @@
         private System.Windows.Forms.Button btnRptcandidatapopular;
         private System.Windows.Forms.Button btnRptcandidataporanio;
         private System.Windows.Forms.Button btnRptcandidatapormunicipo;
+        private System.Windows.Forms.Button btnRptCandidataPopularMunicipo;
     }
 }

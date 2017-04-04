@@ -12,7 +12,7 @@
   <xs:element name="Candidatas" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="Candidatas" msprop:Generator_UserDSName="Candidatas">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="Candidatas" msprop:Generator_TableClassName="CandidatasDataTable" msprop:Generator_TableVarName="tableCandidatas" msprop:Generator_RowChangedName="CandidatasRowChanged" msprop:Generator_TablePropName="_Candidatas" msprop:Generator_RowDeletingName="CandidatasRowDeleting" msprop:Generator_RowChangingName="CandidatasRowChanging" msprop:Generator_RowEvHandlerName="CandidatasRowChangeEventHandler" msprop:Generator_RowDeletedName="CandidatasRowDeleted" msprop:Generator_RowClassName="CandidatasRow" msprop:Generator_UserTableName="Candidatas" msprop:Generator_RowEvArgName="CandidatasRowChangeEvent">
+        <xs:element name="Candidatas" msprop:Generator_TableClassName="CandidatasDataTable" msprop:Generator_TableVarName="tableCandidatas" msprop:Generator_TablePropName="_Candidatas" msprop:Generator_RowDeletingName="CandidatasRowDeleting" msprop:Generator_RowChangingName="CandidatasRowChanging" msprop:Generator_RowEvHandlerName="CandidatasRowChangeEventHandler" msprop:Generator_RowDeletedName="CandidatasRowDeleted" msprop:Generator_UserTableName="Candidatas" msprop:Generator_RowChangedName="CandidatasRowChanged" msprop:Generator_RowEvArgName="CandidatasRowChangeEvent" msprop:Generator_RowClassName="CandidatasRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="pkCandidata" msprop:Generator_ColumnVarNameInTable="columnpkCandidata" msprop:Generator_ColumnPropNameInRow="pkCandidata" msprop:Generator_ColumnPropNameInTable="pkCandidataColumn" msprop:Generator_UserColumnName="pkCandidata" type="xs:string" minOccurs="0" />
@@ -22,6 +22,7 @@
               <xs:element name="sAniosConvocatoria" msprop:Generator_ColumnVarNameInTable="columnsAniosConvocatoria" msprop:Generator_ColumnPropNameInRow="sAniosConvocatoria" msprop:Generator_ColumnPropNameInTable="sAniosConvocatoriaColumn" msprop:Generator_UserColumnName="sAniosConvocatoria" type="xs:string" minOccurs="0" />
               <xs:element name="municipio" msprop:Generator_ColumnVarNameInTable="columnmunicipio" msprop:Generator_ColumnPropNameInRow="municipio" msprop:Generator_ColumnPropNameInTable="municipioColumn" msprop:Generator_UserColumnName="municipio" type="xs:string" minOccurs="0" />
               <xs:element name="usuario" msprop:Generator_ColumnVarNameInTable="columnusuario" msprop:Generator_ColumnPropNameInRow="usuario" msprop:Generator_ColumnPropNameInTable="usuarioColumn" msprop:Generator_UserColumnName="usuario" type="xs:string" minOccurs="0" />
+              <xs:element name="Votos" msprop:Generator_ColumnVarNameInTable="columnVotos" msprop:Generator_ColumnPropNameInRow="Votos" msprop:Generator_ColumnPropNameInTable="VotosColumn" msprop:Generator_UserColumnName="Votos" type="xs:string" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
