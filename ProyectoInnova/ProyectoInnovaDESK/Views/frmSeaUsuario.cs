@@ -26,6 +26,37 @@ namespace ProyectoInnovaDESK.Views
             this.dgvDatos.AutoGenerateColumns = false;
             this.dgvDatos.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             llenardatos();
+            procesarPermisos();
+        }
+
+        public void procesarPermisos()
+        {
+            int permiso = 0;
+            foreach (object obj in this.Controls)
+            {
+                if (obj is Button)
+                {
+                    Button tsmi = (Button)obj;
+                    permiso = Convert.ToInt32(tsmi.Tag);
+                    //var SessionActiva = frmMainSistema.SessionActiva;
+                    tsmi.Enabled = frmPrincipal.uHelper.TienePermisos(permiso);
+                    if (!tsmi.Enabled)
+                    {
+                        tsmi.BackColor = Color.FromArgb(211, 47, 47);
+                    }
+                }
+                if (obj is TextBox)
+                {
+                    TextBox tsmi = (TextBox)obj;
+                    permiso = Convert.ToInt32(tsmi.Tag);
+                    //var SessionActiva = frmMainSistema.SessionActiva;
+                    tsmi.Enabled = frmPrincipal.uHelper.TienePermisos(permiso);
+                    if (!tsmi.Enabled)
+                    {
+                        tsmi.BackColor = Color.FromArgb(211, 47, 47);
+                    }
+                }
+            }
         }
 
         public void llenardatos(string dato = "")
