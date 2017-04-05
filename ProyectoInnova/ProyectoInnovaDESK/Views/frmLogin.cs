@@ -29,18 +29,26 @@ namespace ProyectoInnovaDESK.Views
 
         private void btnAcceder_Click(object sender, EventArgs e)
         {
-            uHelper = UsuarioManager.Autentificar(int.Parse(txtnoempleado.Text), txtPassword.Text);
-            if (uHelper.esValido)
+            if (txtnoempleado.Text != "" && txtPassword.Text != "")
             {
-                frmPrincipal.uHelper = uHelper;
-                this.Close();
+                uHelper = UsuarioManager.Autentificar(int.Parse(txtnoempleado.Text), txtPassword.Text);
+                if (uHelper.esValido)
+                {
+                    frmPrincipal.uHelper = uHelper;
+                    this.Close();
+                }
+                else
+                {
+                    MessageBox.Show(uHelper.sMensaje, "Autentificacion", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    txtnoempleado.Text = "";
+                    txtnoempleado.Focus();
+                }
             }
             else
             {
-                MessageBox.Show(uHelper.sMensaje, "Autentificacion", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                txtnoempleado.Text = "";
-                txtnoempleado.Focus();
+                MessageBox.Show("Faltan datos para acceder", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
+
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)

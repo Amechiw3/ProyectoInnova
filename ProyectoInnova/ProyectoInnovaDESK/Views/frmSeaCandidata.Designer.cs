@@ -41,6 +41,8 @@
             this.btnAgregar = new System.Windows.Forms.Button();
             this.bnEditar = new System.Windows.Forms.Button();
             this.btnBorrar = new System.Windows.Forms.Button();
+            this.cboAnioConv = new System.Windows.Forms.ComboBox();
+            this.btnSalir = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDatos)).BeginInit();
             this.SuspendLayout();
             // 
@@ -56,11 +58,11 @@
             this.Descripcion,
             this.Edad,
             this.Estudios});
-            this.dgvDatos.Location = new System.Drawing.Point(16, 90);
+            this.dgvDatos.Location = new System.Drawing.Point(16, 100);
             this.dgvDatos.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.dgvDatos.Name = "dgvDatos";
             this.dgvDatos.ReadOnly = true;
-            this.dgvDatos.Size = new System.Drawing.Size(675, 259);
+            this.dgvDatos.Size = new System.Drawing.Size(675, 249);
             this.dgvDatos.TabIndex = 0;
             this.dgvDatos.DataSourceChanged += new System.EventHandler(this.dgvDatos_DataSourceChanged);
             // 
@@ -129,7 +131,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(12, 15);
+            this.label2.Location = new System.Drawing.Point(12, 17);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(59, 20);
             this.label2.TabIndex = 2;
@@ -137,9 +139,9 @@
             // 
             // txtBuscar
             // 
-            this.txtBuscar.Location = new System.Drawing.Point(77, 12);
+            this.txtBuscar.Location = new System.Drawing.Point(77, 14);
             this.txtBuscar.Name = "txtBuscar";
-            this.txtBuscar.Size = new System.Drawing.Size(614, 26);
+            this.txtBuscar.Size = new System.Drawing.Size(488, 26);
             this.txtBuscar.TabIndex = 3;
             this.txtBuscar.Tag = "2";
             this.txtBuscar.TextChanged += new System.EventHandler(this.txtBuscar_TextChanged);
@@ -147,7 +149,7 @@
             // btnAgregar
             // 
             this.btnAgregar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(63)))), ((int)(((byte)(159)))));
-            this.btnAgregar.Location = new System.Drawing.Point(581, 44);
+            this.btnAgregar.Location = new System.Drawing.Point(582, 54);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(110, 38);
             this.btnAgregar.TabIndex = 4;
@@ -180,12 +182,37 @@
             this.btnBorrar.UseVisualStyleBackColor = false;
             this.btnBorrar.Click += new System.EventHandler(this.btnBorrar_Click);
             // 
+            // cboAnioConv
+            // 
+            this.cboAnioConv.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboAnioConv.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cboAnioConv.FormattingEnabled = true;
+            this.cboAnioConv.Location = new System.Drawing.Point(571, 12);
+            this.cboAnioConv.Name = "cboAnioConv";
+            this.cboAnioConv.Size = new System.Drawing.Size(121, 28);
+            this.cboAnioConv.TabIndex = 7;
+            this.cboAnioConv.SelectedIndexChanged += new System.EventHandler(this.cboAnioConv_SelectedIndexChanged);
+            // 
+            // btnSalir
+            // 
+            this.btnSalir.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(211)))), ((int)(((byte)(47)))), ((int)(((byte)(47)))));
+            this.btnSalir.Location = new System.Drawing.Point(582, 357);
+            this.btnSalir.Name = "btnSalir";
+            this.btnSalir.Size = new System.Drawing.Size(110, 38);
+            this.btnSalir.TabIndex = 8;
+            this.btnSalir.Tag = "5";
+            this.btnSalir.Text = "Salir";
+            this.btnSalir.UseVisualStyleBackColor = false;
+            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
+            // 
             // frmSeaCandidata
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(30)))), ((int)(((byte)(99)))));
             this.ClientSize = new System.Drawing.Size(704, 441);
+            this.Controls.Add(this.btnSalir);
+            this.Controls.Add(this.cboAnioConv);
             this.Controls.Add(this.btnBorrar);
             this.Controls.Add(this.bnEditar);
             this.Controls.Add(this.btnAgregar);
@@ -195,7 +222,10 @@
             this.Controls.Add(this.dgvDatos);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "frmSeaCandidata";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Catalogo [ Candidatas ]";
             this.Load += new System.EventHandler(this.frmSeaCandidata_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvDatos)).EndInit();
@@ -219,5 +249,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Descripcion;
         private System.Windows.Forms.DataGridViewTextBoxColumn Edad;
         private System.Windows.Forms.DataGridViewTextBoxColumn Estudios;
+        private System.Windows.Forms.ComboBox cboAnioConv;
+        private System.Windows.Forms.Button btnSalir;
     }
 }

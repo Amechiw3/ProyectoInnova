@@ -34,10 +34,10 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="AForge.Video">
-      <HintPath>..\..\..\..\..\Desktop\5to ENERO-ABRIL 2017\Desarrollo de Aplicaciones III  DAP3 (Noe)\AForge.Video.dll</HintPath>
+      <HintPath>..\..\..\..\..\Desktop\Referencia\AForge.Video.dll</HintPath>
     </Reference>
     <Reference Include="AForge.Video.DirectShow">
-      <HintPath>..\..\..\..\..\Desktop\5to ENERO-ABRIL 2017\Desarrollo de Aplicaciones III  DAP3 (Noe)\Release\AForge.Video.DirectShow.dll</HintPath>
+      <HintPath>..\..\..\..\..\Desktop\Referencia\AForge.Video.DirectShow.dll</HintPath>
     </Reference>
     <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="CrystalDecisions.ReportSource, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
@@ -159,36 +159,6 @@
     </Compile>
     <Compile Include="userControl\ucFichaMunicipio.Designer.cs">
       <DependentUpon>ucFichaMunicipio.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Views\CrystalReports\frmCandidatasCapturadasCapturistas.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Views\CrystalReports\frmCandidatasCapturadasCapturistas.Designer.cs">
-      <DependentUpon>frmCandidatasCapturadasCapturistas.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Views\CrystalReports\frmCandidatasConvocatoria.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Views\CrystalReports\frmCandidatasConvocatoria.Designer.cs">
-      <DependentUpon>frmCandidatasConvocatoria.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Views\CrystalReports\frmCandidatasGanadorasMunicipio.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Views\CrystalReports\frmCandidatasGanadorasMunicipio.Designer.cs">
-      <DependentUpon>frmCandidatasGanadorasMunicipio.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Views\CrystalReports\frmCandidatasMayorPuntuacionMunicipio.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Views\CrystalReports\frmCandidatasMayorPuntuacionMunicipio.Designer.cs">
-      <DependentUpon>frmCandidatasMayorPuntuacionMunicipio.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Views\CrystalReports\frmRegistroCandidatasMunicipio.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Views\CrystalReports\frmRegistroCandidatasMunicipio.Designer.cs">
-      <DependentUpon>frmRegistroCandidatasMunicipio.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\201704010704373_INICIAL.cs" />
     <Compile Include="Migrations\201704010704373_INICIAL.Designer.cs">

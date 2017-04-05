@@ -25,8 +25,15 @@ namespace ProyectoInnovaDESK.Views
         {
             this.dgvDatos.AutoGenerateColumns = false;
             this.dgvDatos.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            llenardatos();
+            llenardatos(cboAnioConv.Text);
             procesarPermisos();
+            llenarcombo();
+        }
+
+        public void llenarcombo()
+        {
+            List<String> deptos = CandidataManager.getAniosConvocatoria();
+            cboAnioConv.DataSource = deptos;
         }
 
         public void procesarPermisos()
@@ -59,14 +66,21 @@ namespace ProyectoInnovaDESK.Views
             }
         }
 
-        public void llenardatos(string dato = "")
+        public void llenardatos(string anio ,string dato = "")
         {
-            dgvDatos.DataSource = CandidataManager.ListarContenidoBuscar(dato);
+            dgvDatos.DataSource = CandidataManager.ListarContenidoBuscar(anio, dato);
         }
 
         private void txtBuscar_TextChanged(object sender, EventArgs e)
         {
-            llenardatos(txtBuscar.Text);
+            if (txtBuscar.Text != "")
+            {
+                llenardatos(cboAnioConv.Text,  txtBuscar.Text);
+            }
+            else
+            {
+                llenardatos(cboAnioConv.Text, "");
+            }
         }
 
         private void dgvDatos_DataSourceChanged(object sender, EventArgs e)
@@ -78,19 +92,34 @@ namespace ProyectoInnovaDESK.Views
         {
             var frmAgregarCandidata = new frmAddCandidata();
             frmAgregarCandidata.ShowDialog();
+            llenardatos(cboAnioConv.Text);
+            llenarcombo();
         }
 
         private void bnEditar_Click(object sender, EventArgs e)
         {
             var update = new Views.frmUpdCandidata(int.Parse(dgvDatos.CurrentRow.Cells[0].Value.ToString()));
             update.ShowDialog();
+            llenardatos(cboAnioConv.Text);
+            llenarcombo();
         }
 
         private void btnBorrar_Click(object sender, EventArgs e)
         {
             Candidata candidata = CandidataManager.getData(int.Parse(dgvDatos.CurrentRow.Cells[0].Value.ToString()));
             CandidataManager.BorrarCandidata(candidata);
-            llenardatos(txtBuscar.Text);
+            llenardatos(cboAnioConv.Text);
+            llenarcombo();
+        }
+
+        private void cboAnioConv_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            llenardatos(cboAnioConv.Text);
+        }
+
+        private void btnSalir_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

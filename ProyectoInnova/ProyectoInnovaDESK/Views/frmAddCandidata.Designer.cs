@@ -101,11 +101,14 @@
             // 
             // txtCurp
             // 
+            this.txtCurp.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtCurp.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCurp.Location = new System.Drawing.Point(215, 163);
+            this.txtCurp.MaxLength = 18;
             this.txtCurp.Name = "txtCurp";
             this.txtCurp.Size = new System.Drawing.Size(234, 24);
             this.txtCurp.TabIndex = 10;
+            this.txtCurp.Leave += new System.EventHandler(this.txtCurp_Leave);
             // 
             // label9
             // 
@@ -125,6 +128,7 @@
             this.btnCancelar.TabIndex = 20;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // btnGuardar
             // 
@@ -195,6 +199,7 @@
             this.txtAnioConvocatoria.Size = new System.Drawing.Size(459, 24);
             this.txtAnioConvocatoria.TabIndex = 2;
             this.txtAnioConvocatoria.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtAnioConvocatoria_KeyPress);
+            this.txtAnioConvocatoria.Leave += new System.EventHandler(this.txtAnioConvocatoria_Leave);
             // 
             // label5
             // 

@@ -10,6 +10,7 @@ using System.Drawing;
 using AForge.Video;
 using AForge.Video.DirectShow;
 using ProyectoInnovaDESK.Tools;
+using ProyectoInnovaDESK.Views;
 
 
 namespace ProyectoInnovaDESK.Controllers
@@ -30,6 +31,11 @@ namespace ProyectoInnovaDESK.Controllers
 
         public int Votos { get; set; }
 
+        /// <summary>
+        /// Esta funcion nos regresa la lista de candidatas que se encuentran en la base de datos
+        /// </summary>
+        /// <param name="dato">Nombre de la candidata, para buscar</param>
+        /// <returns></returns>
         public static List<Candidata> ListarContenido(string dato = "")
         {
             try
@@ -43,12 +49,18 @@ namespace ProyectoInnovaDESK.Controllers
             }
         }
 
-        public static List<CandidataManager> ListarContenidoBuscar(string dato = "")
+        /// <summary>
+        /// Esta funcion se encarga de regresar una lista de las candidatas especificando como queremos la lista
+        /// </summary>
+        /// <param name="anio">Año de la convocatoria</param>
+        /// <param name="dato">Valor para filtar el nombre de la candidata</param>
+        /// <returns></returns>
+        public static List<CandidataManager> ListarContenidoBuscar(string anio, string dato = "")
         {
             try
             {
                 var ctx = new DataModel();
-                return (from r in ctx.Candidatas.Where(r => r.sNombre.Contains(dato) && r.bStatus == true).ToList()
+                return (from r in ctx.Candidatas.Where(r => r.sNombre.Contains(dato) && r.sAnioConvocatoria == anio &&r.bStatus == true).ToList()
                         select new CandidataManager
                         {
                             pkCandidata = r.pkCandidata,
@@ -65,6 +77,11 @@ namespace ProyectoInnovaDESK.Controllers
             }
         }
 
+        /// <summary>
+        /// Esta funcion nos regresa un objeto del tipo candidata
+        /// </summary>
+        /// <param name="candidata">Llave primaria de candidata</param>
+        /// <returns></returns>
         public static Candidata getData(int candidata)
         {
             try
@@ -79,6 +96,10 @@ namespace ProyectoInnovaDESK.Controllers
             }
         }
 
+        /// <summary>
+        /// Esta funcion esta encargada de registrar o actualizar la informacion de una candidata
+        /// </summary>
+        /// <param name="candidata">Objeto de candidata</param>
         public static void RegistrarCandidata(Candidata candidata)
         {
             try
@@ -90,11 +111,13 @@ namespace ProyectoInnovaDESK.Controllers
                 }
                 else
                 {
-                    Usuario usuario = ctx.Usuarios.Where(r => r.pkUsuario == candidata.usuarios.pkUsuario).FirstOrDefault();
+                    Usuario usuario = ctx.Usuarios.Where(r => r.pkUsuario == frmPrincipal.uHelper.usuario.pkUsuario).FirstOrDefault();
                     Municipio municipo = ctx.Municipios.Where(r => r.pkMunicipio == candidata.municipio.pkMunicipio).FirstOrDefault();
 
                     ctx.Usuarios.Attach(usuario);
                     ctx.Municipios.Attach(municipo);
+
+                    candidata.usuarios = usuario;
 
                     ctx.Entry(candidata).State = System.Data.Entity.EntityState.Added;
                 }
@@ -106,6 +129,10 @@ namespace ProyectoInnovaDESK.Controllers
             }
         }
 
+        /// <summary>
+        /// Esta funcion esta encargada de borrar a una candidata
+        /// </summary>
+        /// <param name="candidata"></param>
         public static void BorrarCandidata(Candidata candidata)
         {
             try
@@ -169,6 +196,10 @@ namespace ProyectoInnovaDESK.Controllers
             }
         }
 
+        /// <summary>
+        /// Esta funcion nos regresa una lista de los años de convocatoria
+        /// </summary>
+        /// <returns></returns>
         public static List<string> getAniosConvocatoria()
         {
             List<string> departamentos = new List<string>();
@@ -190,6 +221,11 @@ namespace ProyectoInnovaDESK.Controllers
 
         }
 
+        /// <summary>
+        /// Esta funcion genera el reporte de candidatas por año de convocatoria
+        /// </summary>
+        /// <param name="AnioConvocatoria">Año de convocatoria</param>
+        /// <returns></returns>
         public static List<CandidataManager> reporteCandidataAnioConvocatoria(string AnioConvocatoria)
         {
             try
@@ -212,6 +248,11 @@ namespace ProyectoInnovaDESK.Controllers
             }
         }
 
+        /// <summary>
+        /// Esta funcion genera el reporte de candidatas agregadas por Usuarios
+        /// </summary>
+        /// <param name="pkUsuario">Llave primaria de usuarios</param>
+        /// <returns></returns>
         public static List<CandidataManager> reporteCandidataUsuario(int pkUsuario)
         {
             try
@@ -235,6 +276,10 @@ namespace ProyectoInnovaDESK.Controllers
             }
         }
 
+        /// <summary>
+        /// Esta funcion nos regresa las tres candidatas mas populares de cada municipi
+        /// </summary>
+        /// <returns></returns>
         public static List<CandidataManager> ListarCandidatasPopulares3()
         {
             try
@@ -267,6 +312,10 @@ namespace ProyectoInnovaDESK.Controllers
             }
         }
 
+        /// <summary>
+        /// Esta funcion nos regresa una lista de las candidatas mas populares de cada municipio
+        /// </summary>
+        /// <returns></returns>
         public static List<CandidataManager> ListarCandidatasPopularesMunicipio()
         {
             try
