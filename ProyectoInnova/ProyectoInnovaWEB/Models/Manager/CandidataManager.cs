@@ -19,6 +19,7 @@ namespace ProyectoInnovaWEB.Models.Manager
         public String sAnios { get; set; }
         public String sDescripcion { get; set; }
         public String sNivelEstudios { get; set; }
+        public String municipio { get; set; }
         public int votos { get; set; }
 
         /// <summary>
@@ -58,7 +59,7 @@ namespace ProyectoInnovaWEB.Models.Manager
             try
             {
                 var ctx = new DataModel();
-                return (from r in ctx.Candidatas.Where(r => r.bStatus == true).ToList()
+                return (from r in ctx.Candidatas.Include("municipio").Where(r => r.bStatus == true).ToList()
                         select new CandidataManager
                         {
                             pkCandidata = r.pkCandidata,
@@ -67,6 +68,7 @@ namespace ProyectoInnovaWEB.Models.Manager
                             sDescripcion = r.sDescripcion,
                             sNivelEstudios = r.sNivelEstudios,
                             sAnios = (DateTime.Now.Year - r.dfnac.Year).ToString(),
+                            municipio = r.municipio.sNombre,
                             votos = RankingManager.contarVotos(r.pkCandidata)
                         }).OrderByDescending(c => c.votos).ToList();
                         
