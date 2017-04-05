@@ -77,8 +77,9 @@ namespace ProyectoInnovaDESK.Views
         }
 
         private void btnMunicipios_Click(object sender, EventArgs e)
-        { 
-
+        {
+            var frmSeaMunicipio = new frmSeaMunicipios();
+            frmSeaMunicipio.ShowDialog();
         }
 
         private void btnRestricciones_Click(object sender, EventArgs e)

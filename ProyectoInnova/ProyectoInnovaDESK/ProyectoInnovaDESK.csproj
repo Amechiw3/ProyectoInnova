@@ -318,6 +318,9 @@
     <EmbeddedResource Include="userControl\ucFichaCandidata.resx">
       <DependentUpon>ucFichaCandidata.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="userControl\ucFichaMunicipio.resx">
+      <DependentUpon>ucFichaMunicipio.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="userControl\webCamCandidatas.resx">
       <DependentUpon>webCamCandidatas.cs</DependentUpon>
     </EmbeddedResource>

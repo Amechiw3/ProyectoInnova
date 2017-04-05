@@ -25,5 +25,37 @@ namespace ProyectoInnovaDESK.Views
         {
 
         }
+
+        private void btnGuardar_Click(object sender, EventArgs e)
+        {   
+            
+            if (txtMunicipio.Text != "" )
+
+            {
+                if (ucFichaMunicipio1.ImagenString !="")
+                {
+                    var municipio = new Municipio();
+                    municipio.sNombre = txtMunicipio.Text;
+                    municipio.logotipo = ucFichaMunicipio1.ImagenString;
+                    municipio.sDescripcion = txtDescripcion.Text;
+                    MunicipioManager.Guardar(municipio);
+                    this.Close();
+                }
+                else
+                {
+                    MessageBox.Show("Ingresar foto de Municipio, campo obligatorio");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Ingresar nombre de Municipio, campo obligatoriio");
+
+            }
+        }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

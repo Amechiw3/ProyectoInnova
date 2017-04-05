@@ -29,7 +29,9 @@ namespace ProyectoInnovaDESK.Views
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
-           
+            var frnAddMunicipio = new frnAddMunicipios();
+            frnAddMunicipio.ShowDialog();
+            
         }
 
         private void frmSeaMunicipios_Load(object sender, EventArgs e)

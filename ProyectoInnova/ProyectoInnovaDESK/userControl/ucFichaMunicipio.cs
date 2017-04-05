@@ -96,13 +96,15 @@ namespace ProyectoInnovaDESK.userControl
         private void btnExaminar_Click(object sender, EventArgs e)
         {
             OpenFileDialog open = new OpenFileDialog();
-            open.Filter = "jpeg (*.jpeg)| *.jpeg|png (*.png)| *.png|";
+            open.Filter = "Image Files| *.jpg;*.jpeg;*.png;";
             open.Title = "Selecciona Logotipo";
             if (open.ShowDialog() == DialogResult.OK)
             {
                 this.pBoxFoto.ImageLocation = open.FileName;
+                
             }
-
+            Bitmap imagen = new Bitmap(pBoxFoto.ImageLocation);
+            this.ImagenString = ImagenTool.ToBase64String(imagen, ImageFormat.Png);
         }
     }
 }

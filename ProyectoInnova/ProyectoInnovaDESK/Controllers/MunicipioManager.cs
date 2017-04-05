@@ -37,5 +37,28 @@ namespace ProyectoInnovaDESK.Controllers
                 throw;
             }
         }
+        public static void Guardar(Municipio muni)
+        {
+            try
+            {
+                using (var ctx = new DataModel())
+                {
+                    if (muni.pkMunicipio > 0)
+                    {
+                        ctx.Entry(muni).State = System.Data.Entity.EntityState.Modified;
+                    }
+                    else
+                    {
+                        ctx.Entry(muni).State = System.Data.Entity.EntityState.Added;
+                    }
+                    ctx.SaveChanges();
+                }
+                }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
     }
 }
