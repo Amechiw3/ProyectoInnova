@@ -8,7 +8,7 @@ using ProyectoInnovaDESK.Models;
 
 namespace ProyectoInnovaDESK.Controllers
 {
-    class MunicipioManager
+    public class MunicipioManager
     {
         public static List<Municipio> ListarContenido()
         {

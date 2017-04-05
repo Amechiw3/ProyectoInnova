@@ -26,53 +26,77 @@ namespace ProyectoInnovaDESK.Views
             Regex CURP = new Regex(@"^.*(?=.{18})(?=.*[0-9])(?=.*[A-ZÑ]).*$");
             Regex EMAIL = new Regex(@"\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*");
 
-            if (CURP.IsMatch(txtCurp.Text))
+            if (validarTextbox())
             {
-                if (EMAIL.IsMatch(txtCorreo.Text))
+                if (CURP.IsMatch(txtCurp.Text))
                 {
-                    if (webCamCandidatas.ImagenString != "")
+                    if (EMAIL.IsMatch(txtCorreo.Text))
                     {
-                        var candidata = new Candidata();
-                        candidata.sNombre = txtNombre.Text;
-                        candidata.sApellido = txtApellido.Text;
-                        candidata.dfnac = DateTime.Parse(dtpFNac.Value.ToShortDateString());
-                        candidata.sCorreo = txtCorreo.Text;
-                        candidata.sCurp = txtCurp.Text;
-                        candidata.sNivelEstudios = cboNivelEstudios.Text;
-                        candidata.sAnioConvocatoria = txtAnioConvocatoria.Text;
-                        candidata.fotografia = webCamCandidatas.ImagenString;
-                        candidata.usuarios = UsuarioManager.BuscarPorNoEmpleado(frmPrincipal.uHelper.usuario.pkUsuario);
-                        candidata.municipio = MunicipioManager.BuscarPorId(int.Parse(cboMunicipo.SelectedValue.ToString()));
-                        candidata.sDescripcion = txtDescripcion.Text;
-
-                        var validar = CandidataManager.validarCandidata(candidata);
-                        if (validar != null)
+                        if (webCamCandidatas.ImagenString != "")
                         {
-                            MessageBox.Show("Candidata ya registrada", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                            var candidata = new Candidata();
+                            candidata.sNombre = txtNombre.Text;
+                            candidata.sApellido = txtApellido.Text;
+                            candidata.dfnac = DateTime.Parse(dtpFNac.Value.ToShortDateString());
+                            candidata.sCorreo = txtCorreo.Text;
+                            candidata.sCurp = txtCurp.Text;
+                            candidata.sNivelEstudios = cboNivelEstudios.Text;
+                            candidata.sAnioConvocatoria = txtAnioConvocatoria.Text;
+                            candidata.fotografia = webCamCandidatas.ImagenString;
+                            candidata.usuarios = UsuarioManager.BuscarPorNoEmpleado(frmPrincipal.uHelper.usuario.pkUsuario);
+                            candidata.municipio = MunicipioManager.BuscarPorId(int.Parse(cboMunicipo.SelectedValue.ToString()));
+                            candidata.sDescripcion = txtDescripcion.Text;
+
+                            var validar = CandidataManager.validarCandidata(candidata);
+                            if (validar != null)
+                            {
+                                MessageBox.Show("Candidata ya registrada", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                            }
+                            else
+                            {
+                                CandidataManager.RegistrarCandidata(candidata);
+                                this.Close();
+                            }
                         }
                         else
                         {
-                            CandidataManager.RegistrarCandidata(candidata);
-                            this.Close();
+                            MessageBox.Show("Se necesita una fotografia para completar el registro", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                            webCamCandidatas.Focus();
                         }
                     }
                     else
                     {
-                        MessageBox.Show("Se necesita una fotografia para completar el registro", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                        webCamCandidatas.Focus();
+                        MessageBox.Show("Formato de correo electronico incorrecto", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        txtCorreo.Focus();
                     }
                 }
                 else
                 {
-                    MessageBox.Show("Formato de correo electronico incorrecto", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                    txtCorreo.Focus();
+                    MessageBox.Show("Formato de curp incorrecto", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    txtCurp.Focus();
                 }
             }
             else
             {
-                MessageBox.Show("Formato de curp incorrecto", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                txtCurp.Focus();
+                MessageBox.Show("Faltan datos por llenar", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
+        }
+
+        public bool validarTextbox()
+        {
+            if (txtNombre.Text == "")
+            {
+                return false;
+            }
+            if (txtApellido.Text == "")
+            {
+                return false;
+            }
+            if (txtAnioConvocatoria.TextLength != 4)
+            {
+                return false;
+            }
+            return true;
         }
 
         public void llenarcombomunicipios()
@@ -104,6 +128,35 @@ namespace ProyectoInnovaDESK.Views
                 MessageBox.Show("Solo se permiten letras", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 e.Handled = true;
                 return;
+            }
+        }
+
+        private void txtCurp_Leave(object sender, EventArgs e)
+        {
+            Regex CURP = new Regex(@"^.*(?=.{18})(?=.*[0-9])(?=.*[A-ZÑ]).*$");
+            if (!CURP.IsMatch(txtCurp.Text))
+            {
+                MessageBox.Show("Formato de curp incorrecto", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                txtCurp.Focus();
+            }
+         }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void txtAnioConvocatoria_Leave(object sender, EventArgs e)
+        {
+            List<string> lista = new List<string>();
+            for (int i = 0; i < 5; i++)
+            {
+                lista.Add(DateTime.Now.AddYears(i).Year.ToString());
+            }
+            if(!lista.Contains(txtAnioConvocatoria.Text))
+            {
+                MessageBox.Show("El año de la convocatoria no es valido", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                txtAnioConvocatoria.Focus();
             }
         }
     }

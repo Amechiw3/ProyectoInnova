@@ -85,5 +85,22 @@ namespace ProyectoInnovaDESK.Views
             UsuarioManager.BorrarUsuario(usuario);
             llenardatos();
         }
+
+        private void txtBuscar_TextChanged(object sender, EventArgs e)
+        {
+            if (txtBuscar.Text != "")
+            {
+                llenardatos(txtBuscar.Text);
+            }
+            else
+            {
+                llenardatos();
+            }
+        }
+
+        private void btnSalir_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

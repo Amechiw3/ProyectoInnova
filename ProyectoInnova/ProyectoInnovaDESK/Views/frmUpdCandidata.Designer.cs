@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.cboNivelEstudios = new System.Windows.Forms.ComboBox();
             this.txtCurp = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.btnCancelar = new System.Windows.Forms.Button();
@@ -49,7 +50,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.cboNivelEstudios = new System.Windows.Forms.ComboBox();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -83,13 +83,32 @@
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             // 
+            // cboNivelEstudios
+            // 
+            this.cboNivelEstudios.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboNivelEstudios.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboNivelEstudios.FormattingEnabled = true;
+            this.cboNivelEstudios.Items.AddRange(new object[] {
+            "Basica",
+            "Intermedia",
+            "Avanzada",
+            "Maestria",
+            "Doctorado"});
+            this.cboNivelEstudios.Location = new System.Drawing.Point(215, 222);
+            this.cboNivelEstudios.Name = "cboNivelEstudios";
+            this.cboNivelEstudios.Size = new System.Drawing.Size(239, 26);
+            this.cboNivelEstudios.TabIndex = 22;
+            // 
             // txtCurp
             // 
             this.txtCurp.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCurp.Location = new System.Drawing.Point(215, 163);
+            this.txtCurp.MaxLength = 18;
             this.txtCurp.Name = "txtCurp";
-            this.txtCurp.Size = new System.Drawing.Size(459, 24);
+            this.txtCurp.Size = new System.Drawing.Size(239, 24);
             this.txtCurp.TabIndex = 10;
+            this.txtCurp.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCurp_KeyPress);
+            this.txtCurp.Leave += new System.EventHandler(this.txtCurp_Leave);
             // 
             // label9
             // 
@@ -123,7 +142,7 @@
             // txtDescripcion
             // 
             this.txtDescripcion.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDescripcion.Location = new System.Drawing.Point(215, 291);
+            this.txtDescripcion.Location = new System.Drawing.Point(215, 282);
             this.txtDescripcion.Multiline = true;
             this.txtDescripcion.Name = "txtDescripcion";
             this.txtDescripcion.Size = new System.Drawing.Size(459, 64);
@@ -133,7 +152,7 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(212, 270);
+            this.label8.Location = new System.Drawing.Point(212, 261);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(87, 18);
             this.label8.TabIndex = 17;
@@ -141,18 +160,19 @@
             // 
             // cboMunicipo
             // 
+            this.cboMunicipo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboMunicipo.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboMunicipo.FormattingEnabled = true;
-            this.cboMunicipo.Location = new System.Drawing.Point(532, 224);
+            this.cboMunicipo.Location = new System.Drawing.Point(460, 222);
             this.cboMunicipo.Name = "cboMunicipo";
-            this.cboMunicipo.Size = new System.Drawing.Size(142, 26);
+            this.cboMunicipo.Size = new System.Drawing.Size(214, 26);
             this.cboMunicipo.TabIndex = 16;
             // 
             // label7
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(529, 201);
+            this.label7.Location = new System.Drawing.Point(457, 201);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(71, 18);
             this.label7.TabIndex = 15;
@@ -162,7 +182,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(374, 203);
+            this.label6.Location = new System.Drawing.Point(212, 201);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(120, 18);
             this.label6.TabIndex = 13;
@@ -171,10 +191,13 @@
             // txtAnioConvocatoria
             // 
             this.txtAnioConvocatoria.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtAnioConvocatoria.Location = new System.Drawing.Point(215, 40);
+            this.txtAnioConvocatoria.Location = new System.Drawing.Point(215, 38);
+            this.txtAnioConvocatoria.MaxLength = 4;
             this.txtAnioConvocatoria.Name = "txtAnioConvocatoria";
             this.txtAnioConvocatoria.Size = new System.Drawing.Size(459, 24);
             this.txtAnioConvocatoria.TabIndex = 2;
+            this.txtAnioConvocatoria.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtAnioConvocatoria_KeyPress);
+            this.txtAnioConvocatoria.Leave += new System.EventHandler(this.txtAnioConvocatoria_Leave);
             // 
             // label5
             // 
@@ -198,16 +221,17 @@
             // txtCorreo
             // 
             this.txtCorreo.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCorreo.Location = new System.Drawing.Point(215, 226);
+            this.txtCorreo.Location = new System.Drawing.Point(460, 163);
             this.txtCorreo.Name = "txtCorreo";
-            this.txtCorreo.Size = new System.Drawing.Size(156, 24);
+            this.txtCorreo.Size = new System.Drawing.Size(214, 24);
             this.txtCorreo.TabIndex = 12;
+            this.txtCorreo.Leave += new System.EventHandler(this.txtCorreo_Leave);
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(212, 203);
+            this.label4.Location = new System.Drawing.Point(457, 140);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(134, 18);
             this.label4.TabIndex = 11;
@@ -239,6 +263,7 @@
             this.txtApellido.Name = "txtApellido";
             this.txtApellido.Size = new System.Drawing.Size(149, 24);
             this.txtApellido.TabIndex = 6;
+            this.txtApellido.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNombre_KeyPress);
             // 
             // label2
             // 
@@ -257,6 +282,7 @@
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(156, 24);
             this.txtNombre.TabIndex = 4;
+            this.txtNombre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNombre_KeyPress);
             // 
             // label1
             // 
@@ -268,21 +294,6 @@
             this.label1.TabIndex = 3;
             this.label1.Text = "Nombre";
             // 
-            // cboNivelEstudios
-            // 
-            this.cboNivelEstudios.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboNivelEstudios.FormattingEnabled = true;
-            this.cboNivelEstudios.Items.AddRange(new object[] {
-            "Basica",
-            "Intermedia",
-            "Avanzada",
-            "Maestria",
-            "Doctorado"});
-            this.cboNivelEstudios.Location = new System.Drawing.Point(377, 224);
-            this.cboNivelEstudios.Name = "cboNivelEstudios";
-            this.cboNivelEstudios.Size = new System.Drawing.Size(142, 26);
-            this.cboNivelEstudios.TabIndex = 22;
-            // 
             // frmUpdCandidata
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -291,7 +302,8 @@
             this.ClientSize = new System.Drawing.Size(704, 441);
             this.Controls.Add(this.groupBox1);
             this.Name = "frmUpdCandidata";
-            this.Text = "frmUpdCandidata";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Actualizar [ Candidata ]";
             this.Load += new System.EventHandler(this.frmUpdCandidata_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

@@ -1,6 +1,6 @@
 ﻿namespace ProyectoInnovaDESK.Views
 {
-    partial class frmSeaUsuario
+    partial class frmSeaMunicipios
     {
         /// <summary>
         /// Required designer variable.
@@ -37,46 +37,36 @@
             this.dgvDatos = new System.Windows.Forms.DataGridView();
             this.Codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Usuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Rol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnSalir = new System.Windows.Forms.Button();
+            this.Descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDatos)).BeginInit();
             this.SuspendLayout();
             // 
             // btnBorrar
             // 
-            this.btnBorrar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(63)))), ((int)(((byte)(159)))));
             this.btnBorrar.Location = new System.Drawing.Point(133, 355);
             this.btnBorrar.Name = "btnBorrar";
             this.btnBorrar.Size = new System.Drawing.Size(110, 38);
             this.btnBorrar.TabIndex = 13;
-            this.btnBorrar.Tag = "20";
             this.btnBorrar.Text = "Borrar";
-            this.btnBorrar.UseVisualStyleBackColor = false;
-            this.btnBorrar.Click += new System.EventHandler(this.btnBorrar_Click);
+            this.btnBorrar.UseVisualStyleBackColor = true;
             // 
             // bnEditar
             // 
-            this.bnEditar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(63)))), ((int)(((byte)(159)))));
             this.bnEditar.Location = new System.Drawing.Point(17, 355);
             this.bnEditar.Name = "bnEditar";
             this.bnEditar.Size = new System.Drawing.Size(110, 38);
             this.bnEditar.TabIndex = 12;
-            this.bnEditar.Tag = "19";
             this.bnEditar.Text = "Editar";
-            this.bnEditar.UseVisualStyleBackColor = false;
-            this.bnEditar.Click += new System.EventHandler(this.bnEditar_Click);
+            this.bnEditar.UseVisualStyleBackColor = true;
             // 
             // btnAgregar
             // 
-            this.btnAgregar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(63)))), ((int)(((byte)(159)))));
-            this.btnAgregar.Location = new System.Drawing.Point(582, 56);
+            this.btnAgregar.Location = new System.Drawing.Point(582, 42);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(110, 38);
             this.btnAgregar.TabIndex = 11;
-            this.btnAgregar.Tag = "18";
             this.btnAgregar.Text = "Agregar";
-            this.btnAgregar.UseVisualStyleBackColor = false;
+            this.btnAgregar.UseVisualStyleBackColor = true;
             this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
             // txtBuscar
@@ -85,8 +75,6 @@
             this.txtBuscar.Name = "txtBuscar";
             this.txtBuscar.Size = new System.Drawing.Size(614, 26);
             this.txtBuscar.TabIndex = 10;
-            this.txtBuscar.Tag = "17";
-            this.txtBuscar.TextChanged += new System.EventHandler(this.txtBuscar_TextChanged);
             // 
             // label2
             // 
@@ -114,18 +102,18 @@
             this.dgvDatos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Codigo,
             this.Nombre,
-            this.Usuario,
-            this.Rol});
-            this.dgvDatos.Location = new System.Drawing.Point(17, 102);
+            this.Descripcion});
+            this.dgvDatos.Location = new System.Drawing.Point(17, 88);
             this.dgvDatos.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.dgvDatos.Name = "dgvDatos";
             this.dgvDatos.ReadOnly = true;
-            this.dgvDatos.Size = new System.Drawing.Size(675, 245);
+            this.dgvDatos.Size = new System.Drawing.Size(675, 259);
             this.dgvDatos.TabIndex = 7;
+            this.dgvDatos.DataSourceChanged += new System.EventHandler(this.dgvDatos_DataSourceChanged);
             // 
             // Codigo
             // 
-            this.Codigo.DataPropertyName = "pkUsuario";
+            this.Codigo.DataPropertyName = "pkMunicipio";
             this.Codigo.HeaderText = "Codigo";
             this.Codigo.Name = "Codigo";
             this.Codigo.ReadOnly = true;
@@ -139,41 +127,19 @@
             this.Nombre.ReadOnly = true;
             this.Nombre.Width = 250;
             // 
-            // Usuario
+            // Descripcion
             // 
-            this.Usuario.DataPropertyName = "sUsuario";
-            this.Usuario.HeaderText = "Usuario";
-            this.Usuario.Name = "Usuario";
-            this.Usuario.ReadOnly = true;
-            this.Usuario.Width = 150;
+            this.Descripcion.DataPropertyName = "sDescripcion";
+            this.Descripcion.HeaderText = "Descripcion";
+            this.Descripcion.Name = "Descripcion";
+            this.Descripcion.ReadOnly = true;
+            this.Descripcion.Width = 350;
             // 
-            // Rol
-            // 
-            this.Rol.DataPropertyName = "sRol";
-            this.Rol.HeaderText = "Rol";
-            this.Rol.Name = "Rol";
-            this.Rol.ReadOnly = true;
-            this.Rol.Width = 150;
-            // 
-            // btnSalir
-            // 
-            this.btnSalir.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(211)))), ((int)(((byte)(47)))), ((int)(((byte)(47)))));
-            this.btnSalir.Location = new System.Drawing.Point(582, 355);
-            this.btnSalir.Name = "btnSalir";
-            this.btnSalir.Size = new System.Drawing.Size(110, 38);
-            this.btnSalir.TabIndex = 14;
-            this.btnSalir.Tag = "5";
-            this.btnSalir.Text = "Salir";
-            this.btnSalir.UseVisualStyleBackColor = false;
-            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
-            // 
-            // frmSeaUsuario
+            // frmSeaMunicipios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(30)))), ((int)(((byte)(99)))));
             this.ClientSize = new System.Drawing.Size(704, 441);
-            this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.btnBorrar);
             this.Controls.Add(this.bnEditar);
             this.Controls.Add(this.btnAgregar);
@@ -183,11 +149,9 @@
             this.Controls.Add(this.dgvDatos);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.MaximizeBox = false;
-            this.MinimizeBox = false;
-            this.Name = "frmSeaUsuario";
-            this.Text = "Catalogo [ Usuarios ]";
-            this.Load += new System.EventHandler(this.frmSeaUsuario_Load);
+            this.Name = "frmSeaMunicipios";
+            this.Text = "frmSeaMunicipios";
+            this.Load += new System.EventHandler(this.frmSeaMunicipios_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvDatos)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -205,8 +169,6 @@
         private System.Windows.Forms.DataGridView dgvDatos;
         private System.Windows.Forms.DataGridViewTextBoxColumn Codigo;
         private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Usuario;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Rol;
-        private System.Windows.Forms.Button btnSalir;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Descripcion;
     }
 }
