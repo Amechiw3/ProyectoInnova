@@ -286,6 +286,12 @@
     <Compile Include="Views\frmUpdUsuario.Designer.cs">
       <DependentUpon>frmUpdUsuario.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\frnAddMunicipios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\frnAddMunicipios.Designer.cs">
+      <DependentUpon>frnAddMunicipios.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Reportes\Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
@@ -377,6 +383,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\frmUpdUsuario.resx">
       <DependentUpon>frmUpdUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\frnAddMunicipios.resx">
+      <DependentUpon>frnAddMunicipios.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
