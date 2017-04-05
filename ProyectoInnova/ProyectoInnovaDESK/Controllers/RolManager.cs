@@ -12,6 +12,10 @@ namespace ProyectoInnovaDESK.Controllers
 {
     public class RolManager
     {
+        /// <summary>
+        /// Esta funcion nos regresa  una lista de los roles disponibles
+        /// </summary>
+        /// <returns></returns>
         public static List<Rol> ListarContenido()
         {
             try
@@ -26,6 +30,11 @@ namespace ProyectoInnovaDESK.Controllers
             }
         }
 
+        /// <summary>
+        /// Esta funcion nos regresa un objeto del tipo rol mediante la llave primaria
+        /// </summary>
+        /// <param name="ID">llave primaria</param>
+        /// <returns></returns>
         public static Rol getDATA( int ID )
         {
             try

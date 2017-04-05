@@ -62,6 +62,7 @@
             this.dgvDatos.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.dgvDatos.Name = "dgvDatos";
             this.dgvDatos.ReadOnly = true;
+            this.dgvDatos.RowHeadersVisible = false;
             this.dgvDatos.Size = new System.Drawing.Size(675, 249);
             this.dgvDatos.TabIndex = 0;
             this.dgvDatos.DataSourceChanged += new System.EventHandler(this.dgvDatos_DataSourceChanged);

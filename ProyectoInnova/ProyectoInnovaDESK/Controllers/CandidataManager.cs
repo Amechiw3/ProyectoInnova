@@ -28,7 +28,6 @@ namespace ProyectoInnovaDESK.Controllers
         public String municipio { get; set; }
         public String sCorreo { get; set; }
         public String usuario { get; set; }
-
         public int Votos { get; set; }
 
         /// <summary>
@@ -87,7 +86,7 @@ namespace ProyectoInnovaDESK.Controllers
             try
             {
                 var ctx = new DataModel();
-                return ctx.Candidatas.Include("municipio").Include("usuarios")
+                return ctx.Candidatas.Include("municipio").Include("usuarios").Include("rankings")
                     .Where(r => r.pkCandidata == candidata && r.bStatus == true).FirstOrDefault();
             }
             catch (Exception ex)
@@ -138,8 +137,10 @@ namespace ProyectoInnovaDESK.Controllers
             try
             {
                 var ctx = new DataModel();
-                candidata.bStatus = false;
-                ctx.Entry(candidata).State = System.Data.Entity.EntityState.Modified;
+                Candidata borrar = ctx.Candidatas.Where(r => r.pkCandidata == candidata.pkCandidata).FirstOrDefault();
+                borrar.bStatus = false;
+
+                ctx.Entry(borrar).State = System.Data.Entity.EntityState.Modified;
                 ctx.SaveChanges();
             }
             catch (Exception ex)
