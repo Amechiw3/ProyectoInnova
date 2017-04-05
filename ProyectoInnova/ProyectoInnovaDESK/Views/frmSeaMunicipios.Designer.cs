@@ -49,6 +49,7 @@
             this.btnBorrar.TabIndex = 13;
             this.btnBorrar.Text = "Borrar";
             this.btnBorrar.UseVisualStyleBackColor = true;
+            this.btnBorrar.Click += new System.EventHandler(this.btnBorrar_Click);
             // 
             // bnEditar
             // 
@@ -58,6 +59,7 @@
             this.bnEditar.TabIndex = 12;
             this.bnEditar.Text = "Editar";
             this.bnEditar.UseVisualStyleBackColor = true;
+            this.bnEditar.Click += new System.EventHandler(this.bnEditar_Click);
             // 
             // btnAgregar
             // 
@@ -75,6 +77,7 @@
             this.txtBuscar.Name = "txtBuscar";
             this.txtBuscar.Size = new System.Drawing.Size(614, 26);
             this.txtBuscar.TabIndex = 10;
+            this.txtBuscar.TextChanged += new System.EventHandler(this.txtBuscar_TextChanged);
             // 
             // label2
             // 
@@ -139,6 +142,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(24)))), ((int)(((byte)(91)))));
             this.ClientSize = new System.Drawing.Size(704, 441);
             this.Controls.Add(this.btnBorrar);
             this.Controls.Add(this.bnEditar);
@@ -150,7 +154,7 @@
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "frmSeaMunicipios";
-            this.Text = "frmSeaMunicipios";
+            this.Text = "Catálogo Municipios";
             this.Load += new System.EventHandler(this.frmSeaMunicipios_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvDatos)).EndInit();
             this.ResumeLayout(false);

@@ -250,6 +250,12 @@
     <Compile Include="Views\frmUpdCandidata.Designer.cs">
       <DependentUpon>frmUpdCandidata.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\frmUpdMunicipio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\frmUpdMunicipio.Designer.cs">
+      <DependentUpon>frmUpdMunicipio.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\frmUpdUsuario.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -353,6 +359,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\frmUpdCandidata.resx">
       <DependentUpon>frmUpdCandidata.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\frmUpdMunicipio.resx">
+      <DependentUpon>frmUpdMunicipio.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\frmUpdUsuario.resx">
       <DependentUpon>frmUpdUsuario.cs</DependentUpon>

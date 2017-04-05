@@ -60,5 +60,34 @@ namespace ProyectoInnovaDESK.Controllers
                 throw;
             }
         }
+        public static List<Municipio> BuscarMunicipio( string valor)
+        {
+            try
+            {
+                var ctx = new DataModel();
+                return ctx.Municipios.Where(r => r.sNombre.Contains(valor) && r.bStatus == true).ToList();
+            }
+            catch (Exception ex)
+            {
+                throw;
+            }
+        }
+        public static void Borrar(Municipio muni)
+        {
+            try
+            {
+                using (var ctx = new DataModel())
+                {
+                    muni.bStatus = false;
+                     ctx.Entry(muni).State = System.Data.Entity.EntityState.Modified;
+                     ctx.SaveChanges();
+                }
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
     }
 }

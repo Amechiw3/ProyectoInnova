@@ -45,5 +45,34 @@ namespace ProyectoInnovaDESK.Views
         {
             dgvDatos.DataSource = MunicipioManager.ListarContenido();
         }
+
+        private void bnEditar_Click(object sender, EventArgs e)
+        {
+            var update = new frmUpdMunicipio(int.Parse(dgvDatos.CurrentRow.Cells[0].Value.ToString()));
+            update.ShowDialog();
+            llenardatos();
+
+
+        }
+
+        private void txtBuscar_TextChanged(object sender, EventArgs e)
+        {
+            if (txtBuscar.Text !="")
+            {
+                dgvDatos.DataSource = MunicipioManager.BuscarMunicipio(txtBuscar.Text);
+
+            }
+            else
+            {
+                llenardatos();
+            }
+        }
+
+        private void btnBorrar_Click(object sender, EventArgs e)
+        {
+            var Borrar = MunicipioManager.BuscarPorId(int.Parse(dgvDatos.CurrentRow.Cells[0].Value.ToString()));
+            MunicipioManager.Borrar(Borrar);
+            llenardatos();
+        }
     }
 }
