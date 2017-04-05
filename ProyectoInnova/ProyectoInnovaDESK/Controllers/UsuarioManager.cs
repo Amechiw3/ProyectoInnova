@@ -12,6 +12,12 @@ namespace ProyectoInnovaDESK.Controllers
 {
     public class UsuarioManager
     {
+        /// <summary>
+        /// Esta funcion esta encargada de realizar la validacion de el login
+        /// </summary>
+        /// <param name="noEmpleado">llave primaria de el usuario</param>
+        /// <param name="sPassword">Contraseña del usuario</param>
+        /// <returns></returns>
         public static UsuarioHelper Autentificar(int noEmpleado, String sPassword)
         {
             UsuarioHelper uHelper = new UsuarioHelper();
@@ -34,6 +40,11 @@ namespace ProyectoInnovaDESK.Controllers
             return uHelper;
         }
 
+        /// <summary>
+        /// Esta funcion nos regresa un usuario buscando por su numero de empleado (llave primaria)
+        /// </summary>
+        /// <param name="noEmpleado">Llave primaria</param>
+        /// <returns></returns>
         public static Usuario BuscarPorNoEmpleado(int noEmpleado)
         {
             try
@@ -52,6 +63,11 @@ namespace ProyectoInnovaDESK.Controllers
             }
         }
 
+        /// <summary>
+        /// Esta funcion esta encargada de registrar a nuevos usuarios o actualizar la informacion de los existentes
+        /// </summary>
+        /// <param name="nUsuario">Objeto de usuario</param>
+        /// <param name="rol">Objeto de rol</param>
         public static void RegistrarNuevoUsuario(Usuario nUsuario, Rol rol)
         {
             try
@@ -77,6 +93,12 @@ namespace ProyectoInnovaDESK.Controllers
             }
         }
 
+        /// <summary>
+        /// Esta funcion nos regresa una lista de todos los usuarios activos, tambien funciona
+        /// como buscador del usuario por el nombre del mismo, sirva para llenar un combobox
+        /// </summary>
+        /// <param name="dato">Nombre a buscar</param>
+        /// <returns></returns>
         public static List<Usuario> ListarContenido(string dato = "")
         {
             try
@@ -95,6 +117,12 @@ namespace ProyectoInnovaDESK.Controllers
         public string sUsuario  { get; set; }
         public string sRol      { get; set; }
 
+        /// <summary>
+        /// Esta funcion nos regresa una lista de todos los usuarios activos, tambien funciona
+        /// como buscador del usuario por el nombre del mismo
+        /// </summary>
+        /// <param name="dato">Nombre a buscar</param>
+        /// <returns></returns>
         public static List<UsuarioManager> ListarContenidoBuscar(string dato = "")
         {
             try
@@ -122,6 +150,10 @@ namespace ProyectoInnovaDESK.Controllers
             }
         }
 
+        /// <summary>
+        /// Esta funcion esta encargada de borrar a un usuario
+        /// </summary>
+        /// <param name="nUsuario">Objeto de usuario</param>
         public static void BorrarUsuario(Usuario nUsuario)
         {
             try
