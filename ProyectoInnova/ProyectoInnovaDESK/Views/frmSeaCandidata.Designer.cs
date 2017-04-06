@@ -146,6 +146,7 @@
             this.txtBuscar.TabIndex = 3;
             this.txtBuscar.Tag = "2";
             this.txtBuscar.TextChanged += new System.EventHandler(this.txtBuscar_TextChanged);
+            this.txtBuscar.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtBuscar_KeyPress);
             // 
             // btnAgregar
             // 

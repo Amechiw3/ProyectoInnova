@@ -12,9 +12,11 @@ namespace ProyectoInnovaWEB.Controllers
     public class HomeController : Controller
     {
         // GET: Home
-        public ActionResult Index()
+        public ActionResult Index(string fecha = "", string nbCand = "", string nbCiu = "")
         {
-            ViewBag.Datos = CandidataManager.ListarContenidoBuscar();
+            ViewBag.Datos = CandidataManager.ListarContenidoBuscar(fecha, nbCand, nbCiu);
+            ViewBag.Fechas = CandidataManager.getAniosConvocatoria();
+            ViewBag.Municipio = CandidataManager.ListarContenidoMunicipios();
             return View();
         }
 

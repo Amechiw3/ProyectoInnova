@@ -1,9 +1,52 @@
 ﻿@{  
     List<ProyectoInnovaWEB.Models.Manager.CandidataManager> Datos = ViewBag.Datos;
+    List<string> Fechas = ViewBag.Fechas;
+    List<ProyectoInnovaWEB.Models.Municipio> Municipios = ViewBag.Municipio;
+
+
     ViewBag.Title = "Inicio";
+    //string valor;
 }
 <div class="container">
-    <h3 class="text-center">Candidatas</h3><hr />
+    <h3 class="text-center">Candidatas</h3>
+    <hr />
+    @using (Html.BeginForm("Index", "Home", FormMethod.Get))
+    {
+        <div class="form-group row">
+            <label for="Nombre" class="col-md-1 col-form-label text-capitalize text-white"><strong>Fecha</strong></label>
+            <div class="col-md-2">
+                <select class="form-control" name="fecha">
+                    @foreach (var item in Fechas)
+                    {
+                        <option>@item</option>
+                    }
+                </select>
+            </div>
+
+            <label for="Nombre" class="col-md-1 col-form-label text-capitalize text-white"><strong>Nombre</strong></label>
+            <div class="col-md-2">
+                <input class="form-control" type="text" placeholder="Filtrar Nombre" name="nbCand" value=""/>
+            </div>
+
+            <label for="Nombre" class="col-md-1 col-form-label text-capitalize text-white"><strong>Municipio</strong></label>
+            <div class="col-md-2">
+                <select class="form-control" name="nbCiu">
+                    @foreach (var item in Municipios)
+                    {
+                        <option>@item.sNombre</option>
+                    }
+                </select>
+            </div>
+
+            <div class="col-md-3">
+                <button type="submit" class="btn btn-primary btn-block">
+                    Filtrar
+                    <span class="fa fa-search"></span>
+                </button>
+            </div>
+        </div>
+    }
+    <hr />
     <div class="row">
 
         @foreach (var item in Datos)

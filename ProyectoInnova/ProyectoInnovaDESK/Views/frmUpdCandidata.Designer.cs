@@ -128,6 +128,7 @@
             this.btnCancelar.TabIndex = 20;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // btnGuardar
             // 
@@ -212,7 +213,7 @@
             // webCamCandidatas
             // 
             this.webCamCandidatas.ImagenBitmap = null;
-            this.webCamCandidatas.ImagenString = null;
+            this.webCamCandidatas.ImagenString = "";
             this.webCamCandidatas.Location = new System.Drawing.Point(6, 19);
             this.webCamCandidatas.Name = "webCamCandidatas";
             this.webCamCandidatas.Size = new System.Drawing.Size(200, 229);

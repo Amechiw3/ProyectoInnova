@@ -75,5 +75,10 @@ namespace ProyectoInnovaDESK.Views
             cboRol.DisplayMember = "sNombre";
             cboRol.ValueMember = "pkRol";
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

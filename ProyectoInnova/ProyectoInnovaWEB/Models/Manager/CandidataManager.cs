@@ -54,12 +54,37 @@ namespace ProyectoInnovaWEB.Models.Manager
             }
         }
 
-        public static List<CandidataManager> ListarContenidoBuscar()
+        public static List<string> getAniosConvocatoria()
         {
+            List<string> departamentos = new List<string>();
             try
             {
                 var ctx = new DataModel();
-                return (from r in ctx.Candidatas.Include("municipio").Where(r => r.bStatus == true).ToList()
+                var listacandidatas = ctx.Candidatas.GroupBy(r => r.sAnioConvocatoria).ToList();
+                foreach (var item in listacandidatas)
+                {
+                    departamentos.Add(item.Key.ToUpper());
+                }
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+
+            return departamentos;
+
+        }
+
+        public static List<CandidataManager> ListarContenidoBuscar(string fecha = "", string nbCant = "", string nbCiu = "")
+        {
+            try
+            {
+                if (fecha == "")
+                {
+                    fecha = DateTime.Now.Year.ToString();
+                }
+                var ctx = new DataModel();
+                return (from r in ctx.Candidatas.Include("municipio").Where(r => r.municipio.sNombre.Contains(nbCiu) && r.sAnioConvocatoria.Contains(fecha) && r.sNombre.Contains(nbCant) && r.bStatus == true).ToList()
                         select new CandidataManager
                         {
                             pkCandidata = r.pkCandidata,
@@ -72,6 +97,19 @@ namespace ProyectoInnovaWEB.Models.Manager
                             votos = RankingManager.contarVotos(r.pkCandidata)
                         }).OrderByDescending(c => c.votos).ToList();
                         
+            }
+            catch (Exception ex)
+            {
+                throw;
+            }
+        }
+
+        public static List<Municipio> ListarContenidoMunicipios()
+        {
+            try
+            {
+                var ctx = new DataModel();
+                return ctx.Municipios.Where(r => r.bStatus == true).ToList();
             }
             catch (Exception ex)
             {

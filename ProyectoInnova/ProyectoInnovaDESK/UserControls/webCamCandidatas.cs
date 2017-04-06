@@ -31,6 +31,7 @@ namespace ProyectoInnovaDESK.userControl
         private void webCamCandidatas_Load(object sender, EventArgs e)
         {
             videoDevices = new FilterInfoCollection(FilterCategory.VideoInputDevice);
+            this.ImagenString = "";
 
             foreach (FilterInfo device in videoDevices)
             {

@@ -106,7 +106,25 @@ namespace ProyectoInnovaDESK.Controllers
                 var ctx = new DataModel();
                 if (candidata.pkCandidata > 0)
                 {
-                    ctx.Entry(candidata).State = System.Data.Entity.EntityState.Modified;
+                    Candidata can = ctx.Candidatas.Where(r => r.pkCandidata == candidata.pkCandidata).FirstOrDefault();
+                    can.sNombre = candidata.sNombre;
+                    can.sApellido = candidata.sApellido;
+                    can.sAnioConvocatoria = candidata.sAnioConvocatoria;
+                    can.sNivelEstudios = candidata.sNivelEstudios;
+                    can.sDescripcion = candidata.sDescripcion;
+                    can.sCorreo = candidata.sCorreo;
+                    can.sCurp = candidata.sCurp;
+
+                    Usuario usuario = ctx.Usuarios.Where(r => r.pkUsuario == frmPrincipal.uHelper.usuario.pkUsuario).FirstOrDefault();
+                    Municipio municipo = ctx.Municipios.Where(r => r.pkMunicipio == candidata.municipio.pkMunicipio).FirstOrDefault();
+
+                    ctx.Usuarios.Attach(usuario);
+                    ctx.Municipios.Attach(municipo);
+
+                    can.usuarios = usuario;
+                    can.municipio = municipo;
+
+                    ctx.Entry(can).State = System.Data.Entity.EntityState.Modified;
                 }
                 else
                 {

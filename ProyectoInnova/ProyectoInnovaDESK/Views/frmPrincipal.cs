@@ -47,13 +47,12 @@ namespace ProyectoInnovaDESK.Views
             {
                 if (obj is Button)
                 {
-                    Button tsmi = (Button)obj;
-                    permiso = Convert.ToInt32(tsmi.Tag);
-                    //var SessionActiva = frmMainSistema.SessionActiva;
-                    tsmi.Enabled = uHelper.TienePermisos(permiso);
-                    if (!tsmi.Enabled)
+                    Button btn = (Button)obj;
+                    permiso = Convert.ToInt32(btn.Tag);
+                    btn.Enabled = uHelper.TienePermisos(permiso);
+                    if (!btn.Enabled)
                     {
-                        tsmi.BackColor = Color.FromArgb(211, 47, 47);
+                        btn.BackColor = Color.FromArgb(211, 47, 47);
                     }
                 }
             }

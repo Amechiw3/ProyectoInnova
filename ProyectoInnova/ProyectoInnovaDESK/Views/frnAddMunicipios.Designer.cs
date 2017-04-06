@@ -56,6 +56,7 @@
             this.txtMunicipio.Name = "txtMunicipio";
             this.txtMunicipio.Size = new System.Drawing.Size(393, 22);
             this.txtMunicipio.TabIndex = 2;
+            this.txtMunicipio.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtMunicipio_KeyPress);
             // 
             // label2
             // 
@@ -75,6 +76,7 @@
             this.txtDescripcion.Name = "txtDescripcion";
             this.txtDescripcion.Size = new System.Drawing.Size(393, 185);
             this.txtDescripcion.TabIndex = 4;
+            this.txtDescripcion.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDescripcion_KeyPress);
             // 
             // btnGuardar
             // 
@@ -121,7 +123,7 @@
             // ucFichaMunicipio1
             // 
             this.ucFichaMunicipio1.ImagenBitmap = null;
-            this.ucFichaMunicipio1.ImagenString = null;
+            this.ucFichaMunicipio1.ImagenString = "";
             this.ucFichaMunicipio1.Location = new System.Drawing.Point(7, 22);
             this.ucFichaMunicipio1.Margin = new System.Windows.Forms.Padding(4);
             this.ucFichaMunicipio1.Name = "ucFichaMunicipio1";
