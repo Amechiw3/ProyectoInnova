@@ -200,8 +200,7 @@
             this.btnSalir.Location = new System.Drawing.Point(582, 357);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(110, 38);
-            this.btnSalir.TabIndex = 8;
-            this.btnSalir.Tag = "5";
+            this.btnSalir.TabIndex = 9;
             this.btnSalir.Text = "Salir";
             this.btnSalir.UseVisualStyleBackColor = false;
             this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);

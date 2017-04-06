@@ -15,20 +15,41 @@ namespace ProyectoInnovaDESK.Tools
     {
         public static Bitmap Base64StringToBitmap(string base64String)
         {
-            Bitmap bmpReturn = null;
+            try
+            {
+                Bitmap bmpReturn = null;
 
-            byte[] byteBuffer = Convert.FromBase64String(base64String);
-            MemoryStream memoryStream = new MemoryStream(byteBuffer);
+                byte[] byteBuffer = Convert.FromBase64String(base64String);
+                MemoryStream memoryStream = new MemoryStream(byteBuffer);
 
-            memoryStream.Position = 0;
+                memoryStream.Position = 0;
 
-            bmpReturn = (Bitmap)Bitmap.FromStream(memoryStream);
+                bmpReturn = (Bitmap)Bitmap.FromStream(memoryStream);
 
-            memoryStream.Close();
-            memoryStream = null;
-            byteBuffer = null;
+                memoryStream.Close();
+                memoryStream = null;
+                byteBuffer = null;
 
-            return bmpReturn;
+                return bmpReturn;
+            }
+            catch (Exception)
+            {
+                Bitmap bmpReturn = null;
+
+                byte[] byteBuffer = Convert.FromBase64String(CargarImagenDefault());
+                MemoryStream memoryStream = new MemoryStream(byteBuffer);
+
+                memoryStream.Position = 0;
+
+                bmpReturn = (Bitmap)Bitmap.FromStream(memoryStream);
+
+                memoryStream.Close();
+                memoryStream = null;
+                byteBuffer = null;
+
+                return bmpReturn;
+            }
+            
         }
 
         public static string ToBase64String(Bitmap bmp, ImageFormat imageFormat)
@@ -57,10 +78,10 @@ namespace ProyectoInnovaDESK.Tools
         /// </summary>
         /// <param name="imgDEfault">Nombre de la Imagen a Cargar</param>
         /// <returns>texto base 64 de la imagen</returns>
-        public static string CargarImagenDefault(String imgDEfault = "coche_silueta.jpg")
+        public static string CargarImagenDefault(String imgDEfault = "no_image.png")
         {
             string txtImagen = "";
-            String path = Path.Combine(Application.StartupPath, String.Format("Comun\\{0}", imgDEfault));
+            String path = Path.Combine(Application.StartupPath, String.Format("Tools\\{0}", imgDEfault));
             if (File.Exists(path))
             {
                 Bitmap imagen = new System.Drawing.Bitmap(path);

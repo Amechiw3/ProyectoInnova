@@ -57,7 +57,7 @@ namespace ProyectoInnovaDESK.userControl
         private void ucFichaMunicipio_Load(object sender, EventArgs e)
         {
             videoDevices = new FilterInfoCollection(FilterCategory.VideoInputDevice);
-
+            this.ImagenString = "";
             foreach (FilterInfo device in videoDevices)
             {
                 cmbCamaras.Items.Add(device.Name);

@@ -34,14 +34,16 @@
             this.txtDescripcion = new System.Windows.Forms.TextBox();
             this.btnGuardar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.ucFichaMunicipio1 = new ProyectoInnovaDESK.userControl.ucFichaMunicipio();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(291, 19);
+            this.label1.Location = new System.Drawing.Point(285, 20);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(75, 20);
             this.label1.TabIndex = 1;
@@ -49,17 +51,17 @@
             // 
             // txtMunicipio
             // 
-            this.txtMunicipio.Location = new System.Drawing.Point(287, 41);
+            this.txtMunicipio.Location = new System.Drawing.Point(281, 42);
             this.txtMunicipio.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtMunicipio.Name = "txtMunicipio";
-            this.txtMunicipio.Size = new System.Drawing.Size(405, 22);
+            this.txtMunicipio.Size = new System.Drawing.Size(393, 22);
             this.txtMunicipio.TabIndex = 2;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(287, 86);
+            this.label2.Location = new System.Drawing.Point(281, 87);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(92, 20);
             this.label2.TabIndex = 3;
@@ -67,19 +69,18 @@
             // 
             // txtDescripcion
             // 
-            this.txtDescripcion.Location = new System.Drawing.Point(287, 118);
+            this.txtDescripcion.Location = new System.Drawing.Point(281, 119);
             this.txtDescripcion.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtDescripcion.Multiline = true;
             this.txtDescripcion.Name = "txtDescripcion";
-            this.txtDescripcion.Size = new System.Drawing.Size(405, 185);
+            this.txtDescripcion.Size = new System.Drawing.Size(393, 185);
             this.txtDescripcion.TabIndex = 4;
             // 
             // btnGuardar
             // 
             this.btnGuardar.BackColor = System.Drawing.SystemColors.Control;
-            this.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnGuardar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGuardar.Location = new System.Drawing.Point(456, 388);
+            this.btnGuardar.Location = new System.Drawing.Point(438, 370);
             this.btnGuardar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(115, 42);
@@ -91,9 +92,8 @@
             // btnCancelar
             // 
             this.btnCancelar.BackColor = System.Drawing.SystemColors.Control;
-            this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancelar.Location = new System.Drawing.Point(577, 388);
+            this.btnCancelar.Location = new System.Drawing.Point(559, 370);
             this.btnCancelar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(115, 42);
@@ -102,11 +102,27 @@
             this.btnCancelar.UseVisualStyleBackColor = false;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
+            // groupBox1
+            // 
+            this.groupBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(189)))), ((int)(((byte)(189)))));
+            this.groupBox1.Controls.Add(this.ucFichaMunicipio1);
+            this.groupBox1.Controls.Add(this.btnCancelar);
+            this.groupBox1.Controls.Add(this.txtMunicipio);
+            this.groupBox1.Controls.Add(this.btnGuardar);
+            this.groupBox1.Controls.Add(this.label1);
+            this.groupBox1.Controls.Add(this.txtDescripcion);
+            this.groupBox1.Controls.Add(this.label2);
+            this.groupBox1.Location = new System.Drawing.Point(12, 12);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(680, 417);
+            this.groupBox1.TabIndex = 8;
+            this.groupBox1.TabStop = false;
+            // 
             // ucFichaMunicipio1
             // 
             this.ucFichaMunicipio1.ImagenBitmap = null;
             this.ucFichaMunicipio1.ImagenString = null;
-            this.ucFichaMunicipio1.Location = new System.Drawing.Point(13, 13);
+            this.ucFichaMunicipio1.Location = new System.Drawing.Point(7, 22);
             this.ucFichaMunicipio1.Margin = new System.Windows.Forms.Padding(4);
             this.ucFichaMunicipio1.Name = "ucFichaMunicipio1";
             this.ucFichaMunicipio1.Size = new System.Drawing.Size(267, 290);
@@ -118,20 +134,16 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(24)))), ((int)(((byte)(91)))));
             this.ClientSize = new System.Drawing.Size(704, 441);
-            this.Controls.Add(this.ucFichaMunicipio1);
-            this.Controls.Add(this.btnCancelar);
-            this.Controls.Add(this.btnGuardar);
-            this.Controls.Add(this.txtDescripcion);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.txtMunicipio);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.groupBox1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frnAddMunicipios";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Agregar Municipios";
             this.Load += new System.EventHandler(this.frnAddMunicipios_Load);
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -143,5 +155,6 @@
         private System.Windows.Forms.Button btnGuardar;
         private System.Windows.Forms.Button btnCancelar;
         private userControl.ucFichaMunicipio ucFichaMunicipio1;
+        private System.Windows.Forms.GroupBox groupBox1;
     }
 }

@@ -32,15 +32,15 @@
             this.btnGuardar = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.txtNombre = new System.Windows.Forms.TextBox();
-            this.txtApellido = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.txtUsuario = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
+            this.cboRol = new System.Windows.Forms.ComboBox();
+            this.label5 = new System.Windows.Forms.Label();
             this.txtPassword = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.cboRol = new System.Windows.Forms.ComboBox();
+            this.txtUsuario = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.txtApellido = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.txtNombre = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -93,47 +93,22 @@
             this.groupBox1.TabIndex = 3;
             this.groupBox1.TabStop = false;
             // 
-            // txtNombre
+            // cboRol
             // 
-            this.txtNombre.Location = new System.Drawing.Point(139, 121);
-            this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(181, 26);
-            this.txtNombre.TabIndex = 3;
-            this.txtNombre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtUsuario_KeyPress);
+            this.cboRol.FormattingEnabled = true;
+            this.cboRol.Location = new System.Drawing.Point(139, 239);
+            this.cboRol.Name = "cboRol";
+            this.cboRol.Size = new System.Drawing.Size(411, 28);
+            this.cboRol.TabIndex = 12;
             // 
-            // txtApellido
+            // label5
             // 
-            this.txtApellido.Location = new System.Drawing.Point(326, 121);
-            this.txtApellido.Name = "txtApellido";
-            this.txtApellido.Size = new System.Drawing.Size(224, 26);
-            this.txtApellido.TabIndex = 5;
-            this.txtApellido.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtUsuario_KeyPress);
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(322, 98);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(65, 20);
-            this.label2.TabIndex = 4;
-            this.label2.Text = "Apellido";
-            // 
-            // txtUsuario
-            // 
-            this.txtUsuario.Location = new System.Drawing.Point(139, 184);
-            this.txtUsuario.Name = "txtUsuario";
-            this.txtUsuario.Size = new System.Drawing.Size(181, 26);
-            this.txtUsuario.TabIndex = 7;
-            this.txtUsuario.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtUsuario_KeyPress);
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(135, 161);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(64, 20);
-            this.label3.TabIndex = 6;
-            this.label3.Text = "Usuario";
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(135, 216);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(33, 20);
+            this.label5.TabIndex = 10;
+            this.label5.Text = "Rol";
             // 
             // txtPassword
             // 
@@ -152,22 +127,47 @@
             this.label4.TabIndex = 8;
             this.label4.Text = "Contraseña";
             // 
-            // label5
+            // txtUsuario
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(135, 216);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(33, 20);
-            this.label5.TabIndex = 10;
-            this.label5.Text = "Rol";
+            this.txtUsuario.Location = new System.Drawing.Point(139, 184);
+            this.txtUsuario.Name = "txtUsuario";
+            this.txtUsuario.Size = new System.Drawing.Size(181, 26);
+            this.txtUsuario.TabIndex = 7;
+            this.txtUsuario.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtUsuario_KeyPress);
             // 
-            // cboRol
+            // label3
             // 
-            this.cboRol.FormattingEnabled = true;
-            this.cboRol.Location = new System.Drawing.Point(139, 239);
-            this.cboRol.Name = "cboRol";
-            this.cboRol.Size = new System.Drawing.Size(411, 28);
-            this.cboRol.TabIndex = 12;
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(135, 161);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(64, 20);
+            this.label3.TabIndex = 6;
+            this.label3.Text = "Usuario";
+            // 
+            // txtApellido
+            // 
+            this.txtApellido.Location = new System.Drawing.Point(326, 121);
+            this.txtApellido.Name = "txtApellido";
+            this.txtApellido.Size = new System.Drawing.Size(224, 26);
+            this.txtApellido.TabIndex = 5;
+            this.txtApellido.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtUsuario_KeyPress);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(322, 98);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(65, 20);
+            this.label2.TabIndex = 4;
+            this.label2.Text = "Apellido";
+            // 
+            // txtNombre
+            // 
+            this.txtNombre.Location = new System.Drawing.Point(139, 121);
+            this.txtNombre.Name = "txtNombre";
+            this.txtNombre.Size = new System.Drawing.Size(181, 26);
+            this.txtNombre.TabIndex = 3;
+            this.txtNombre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtUsuario_KeyPress);
             // 
             // frmAddUsuario
             // 
@@ -179,6 +179,7 @@
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "frmAddUsuario";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Agregar [ Usuario ]";
             this.Load += new System.EventHandler(this.frmAddUsuario_Load);
             this.groupBox1.ResumeLayout(false);

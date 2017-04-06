@@ -186,6 +186,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frmSeaUsuario";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Catalogo [ Usuarios ]";
             this.Load += new System.EventHandler(this.frmSeaUsuario_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvDatos)).EndInit();

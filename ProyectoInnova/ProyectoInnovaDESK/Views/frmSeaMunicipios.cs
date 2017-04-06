@@ -74,5 +74,10 @@ namespace ProyectoInnovaDESK.Views
             MunicipioManager.Borrar(Borrar);
             llenardatos();
         }
+
+        private void btnSalir_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

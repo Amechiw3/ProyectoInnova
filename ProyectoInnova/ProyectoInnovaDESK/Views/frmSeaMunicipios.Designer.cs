@@ -38,37 +38,41 @@
             this.Codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnSalir = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDatos)).BeginInit();
             this.SuspendLayout();
             // 
             // btnBorrar
             // 
+            this.btnBorrar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(63)))), ((int)(((byte)(159)))));
             this.btnBorrar.Location = new System.Drawing.Point(133, 355);
             this.btnBorrar.Name = "btnBorrar";
             this.btnBorrar.Size = new System.Drawing.Size(110, 38);
             this.btnBorrar.TabIndex = 13;
             this.btnBorrar.Text = "Borrar";
-            this.btnBorrar.UseVisualStyleBackColor = true;
+            this.btnBorrar.UseVisualStyleBackColor = false;
             this.btnBorrar.Click += new System.EventHandler(this.btnBorrar_Click);
             // 
             // bnEditar
             // 
+            this.bnEditar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(63)))), ((int)(((byte)(159)))));
             this.bnEditar.Location = new System.Drawing.Point(17, 355);
             this.bnEditar.Name = "bnEditar";
             this.bnEditar.Size = new System.Drawing.Size(110, 38);
             this.bnEditar.TabIndex = 12;
             this.bnEditar.Text = "Editar";
-            this.bnEditar.UseVisualStyleBackColor = true;
+            this.bnEditar.UseVisualStyleBackColor = false;
             this.bnEditar.Click += new System.EventHandler(this.bnEditar_Click);
             // 
             // btnAgregar
             // 
+            this.btnAgregar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(63)))), ((int)(((byte)(159)))));
             this.btnAgregar.Location = new System.Drawing.Point(582, 42);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(110, 38);
             this.btnAgregar.TabIndex = 11;
             this.btnAgregar.Text = "Agregar";
-            this.btnAgregar.UseVisualStyleBackColor = true;
+            this.btnAgregar.UseVisualStyleBackColor = false;
             this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
             // txtBuscar
@@ -138,12 +142,24 @@
             this.Descripcion.ReadOnly = true;
             this.Descripcion.Width = 350;
             // 
+            // btnSalir
+            // 
+            this.btnSalir.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(211)))), ((int)(((byte)(47)))), ((int)(((byte)(47)))));
+            this.btnSalir.Location = new System.Drawing.Point(582, 355);
+            this.btnSalir.Name = "btnSalir";
+            this.btnSalir.Size = new System.Drawing.Size(110, 38);
+            this.btnSalir.TabIndex = 14;
+            this.btnSalir.Text = "Salir";
+            this.btnSalir.UseVisualStyleBackColor = false;
+            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
+            // 
             // frmSeaMunicipios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(24)))), ((int)(((byte)(91)))));
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(30)))), ((int)(((byte)(99)))));
             this.ClientSize = new System.Drawing.Size(704, 441);
+            this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.btnBorrar);
             this.Controls.Add(this.bnEditar);
             this.Controls.Add(this.btnAgregar);
@@ -154,6 +170,7 @@
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "frmSeaMunicipios";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Catálogo Municipios";
             this.Load += new System.EventHandler(this.frmSeaMunicipios_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvDatos)).EndInit();
@@ -174,5 +191,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Codigo;
         private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
         private System.Windows.Forms.DataGridViewTextBoxColumn Descripcion;
+        private System.Windows.Forms.Button btnSalir;
     }
 }

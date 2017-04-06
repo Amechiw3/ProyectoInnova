@@ -30,7 +30,6 @@ namespace ProyectoInnovaDESK.Views
         {   
             
             if (txtMunicipio.Text != "" )
-
             {
                 if (ucFichaMunicipio1.ImagenString !="")
                 {
